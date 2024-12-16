@@ -71,7 +71,7 @@ if __name__ == '__main__':
         for chunk in iter(lambda: f.read(65536), b''):
             hasher.update(chunk)
     hash = hasher.hexdigest()
-    report = { 'filename': args.data, 'hash-blake2b': hash }
+    report = { 'filename': os.path.abspath(args.data), 'hash-blake2b': hash }
     with open(report_filename, 'w') as file:
         toml.dump(report, file)
 
