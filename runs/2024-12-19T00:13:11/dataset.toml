@@ -1,0 +1,4 @@
+filename = "/home/ask/skole-learning-systems/attempt1/data/9x9_medium.csv"
+hash-blake2b = "890c4290fe333d809afccbce690e86f2361831e715feec14a02ec63e1cbd9351f4dc6a1fe73815345cc06dbea56d9f4eb6a110c33463f89e03daf36e8a7cace1"
+dimensions = 9
+rows = 10000

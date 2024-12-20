@@ -1,0 +1,11 @@
+epochs = 150
+number_of_clauses = 200
+t = 400
+s = 1.947807549966659
+depth = 7
+hypervector_size = 256
+hypervector_bits = 2
+message_size = 512
+message_bits = 1
+double_hashing = false
+max_included_literals = 32

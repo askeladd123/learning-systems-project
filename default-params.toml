@@ -1,4 +1,4 @@
-epochs = 100
+epochs = 5
 number_of_clauses = 200
 t = 400
 s = 1.2

@@ -1,0 +1,7 @@
+training_time_s = 1651.3069252967834
+inference_time_s = 0.12748336791992188
+memory_usage_mb = 425.1953125
+accuracy = "0.791"
+precision = 0.7938452554350758
+recall = 0.791
+f1_score = 0.7922367623133935

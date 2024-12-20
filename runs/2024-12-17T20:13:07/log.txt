@@ -1,0 +1,2406 @@
+creating new run in runs/2024-12-17T20:13:07
+reporting parameters in runs/2024-12-17T20:13:07/params.toml, values:
+{'epochs': 150, 'number_of_clauses': 500, 't': 200, 's': 2.444150025884483, 'depth': 7, 'hypervector_size': 256, 'hypervector_bits': 2, 'message_size': 1024, 'message_bits': 1, 'double_hashing': False, 'max_included_literals': 16}
+loading dataset from /home/ask/skole-learning-systems/attempt1/data/5x5_medium.csv
+hashing dataset
+saving dataset report to runs/2024-12-17T20:13:07/dataset.toml, content:
+{'filename': '/home/ask/skole-learning-systems/attempt1/data/5x5_medium.csv', 'hash-blake2b': 'b0b36b8a6b032c3e372a41e962df4fc44512f185a20c006de08d02a1424c632e3f49b93ea8f40fdfbc47cdbb7be4d82c0fd10dd7be083b595841b024e043130b', 'dimensions': 5, 'rows': 10000}
+X_train shape: (9000,)
+X_test shape: (1000,)
+Creating training data
+bytecode dump:
+>          0	NOP(arg=None, lineno=72)
+           2	RESUME(arg=0, lineno=72)
+           4	LOAD_GLOBAL(arg=1, lineno=75)
+          14	LOAD_FAST(arg=1, lineno=75)
+          16	LOAD_ATTR(arg=2, lineno=75)
+          36	LOAD_CONST(arg=1, lineno=75)
+          38	BINARY_SUBSCR(arg=None, lineno=75)
+          42	CALL(arg=1, lineno=75)
+          50	GET_ITER(arg=None, lineno=75)
+>         52	FOR_ITER(arg=50, lineno=75)
+          56	STORE_FAST(arg=2, lineno=75)
+          58	LOAD_GLOBAL(arg=1, lineno=76)
+          68	LOAD_FAST(arg=0, lineno=76)
+          70	LOAD_FAST(arg=0, lineno=76)
+          72	LOAD_CONST(arg=2, lineno=76)
+          74	BINARY_OP(arg=5, lineno=76)
+          78	CALL(arg=2, lineno=76)
+          86	GET_ITER(arg=None, lineno=76)
+>         88	FOR_ITER(arg=30, lineno=76)
+          92	STORE_FAST(arg=3, lineno=76)
+          94	LOAD_FAST(arg=3, lineno=77)
+          96	LOAD_CONST(arg=3, lineno=77)
+          98	BINARY_OP(arg=2, lineno=77)
+         102	STORE_FAST(arg=4, lineno=77)
+         104	LOAD_FAST(arg=3, lineno=78)
+         106	LOAD_CONST(arg=3, lineno=78)
+         108	BINARY_OP(arg=6, lineno=78)
+         112	STORE_FAST(arg=5, lineno=78)
+         114	LOAD_FAST(arg=1, lineno=79)
+         116	LOAD_FAST(arg=2, lineno=79)
+         118	LOAD_FAST(arg=4, lineno=79)
+         120	BUILD_TUPLE(arg=2, lineno=79)
+         122	COPY(arg=2, lineno=79)
+         124	COPY(arg=2, lineno=79)
+         126	BINARY_SUBSCR(arg=None, lineno=79)
+         130	LOAD_CONST(arg=4, lineno=79)
+         132	LOAD_FAST(arg=5, lineno=79)
+         134	BINARY_OP(arg=3, lineno=79)
+         138	BINARY_OP(arg=20, lineno=79)
+         142	SWAP(arg=3, lineno=79)
+         144	SWAP(arg=2, lineno=79)
+         146	STORE_SUBSCR(arg=None, lineno=79)
+         150	JUMP_BACKWARD(arg=32, lineno=79)
+>        152	END_FOR(arg=None, lineno=76)
+         154	JUMP_BACKWARD(arg=52, lineno=76)
+>        156	END_FOR(arg=None, lineno=75)
+         158	RETURN_CONST(arg=0, lineno=75)
+pending: deque([State(pc_initial=0 nstack_initial=0)])
+stack: []
+state.pc_initial: State(pc_initial=0 nstack_initial=0)
+dispatch pc=0, inst=NOP(arg=None, lineno=72)
+stack []
+dispatch pc=2, inst=RESUME(arg=0, lineno=72)
+stack []
+dispatch pc=4, inst=LOAD_GLOBAL(arg=1, lineno=75)
+stack []
+dispatch pc=14, inst=LOAD_FAST(arg=1, lineno=75)
+stack ['$null$4.1', '$4load_global.0']
+dispatch pc=16, inst=LOAD_ATTR(arg=2, lineno=75)
+stack ['$null$4.1', '$4load_global.0', '$X14.2']
+dispatch pc=36, inst=LOAD_CONST(arg=1, lineno=75)
+stack ['$null$4.1', '$4load_global.0', '$16load_attr.3']
+dispatch pc=38, inst=BINARY_SUBSCR(arg=None, lineno=75)
+stack ['$null$4.1', '$4load_global.0', '$16load_attr.3', '$const36.4']
+dispatch pc=42, inst=CALL(arg=1, lineno=75)
+stack ['$null$4.1', '$4load_global.0', '$38binary_subscr.5']
+dispatch pc=50, inst=GET_ITER(arg=None, lineno=75)
+stack ['$42call.6']
+end state. edges=[Edge(pc=52, stack=('$50get_iter.7',), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=52 nstack_initial=1)])
+stack: ['$phi52.0']
+state.pc_initial: State(pc_initial=52 nstack_initial=1)
+dispatch pc=52, inst=FOR_ITER(arg=50, lineno=75)
+stack ['$phi52.0']
+end state. edges=[Edge(pc=156, stack=('$phi52.0', '$52for_iter.2'), blockstack=(), npush=0), Edge(pc=56, stack=('$phi52.0', '$52for_iter.2'), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=156 nstack_initial=2), State(pc_initial=56 nstack_initial=2)])
+stack: ['$phi156.0', '$phi156.1']
+state.pc_initial: State(pc_initial=156 nstack_initial=2)
+dispatch pc=156, inst=END_FOR(arg=None, lineno=75)
+stack ['$phi156.0', '$phi156.1']
+dispatch pc=158, inst=RETURN_CONST(arg=0, lineno=75)
+stack []
+end state. edges=[]
+pending: deque([State(pc_initial=56 nstack_initial=2)])
+stack: ['$phi56.0', '$phi56.1']
+state.pc_initial: State(pc_initial=56 nstack_initial=2)
+dispatch pc=56, inst=STORE_FAST(arg=2, lineno=75)
+stack ['$phi56.0', '$phi56.1']
+dispatch pc=58, inst=LOAD_GLOBAL(arg=1, lineno=76)
+stack ['$phi56.0']
+dispatch pc=68, inst=LOAD_FAST(arg=0, lineno=76)
+stack ['$phi56.0', '$null$58.3', '$58load_global.2']
+dispatch pc=70, inst=LOAD_FAST(arg=0, lineno=76)
+stack ['$phi56.0', '$null$58.3', '$58load_global.2', '$hypervector_size68.4']
+dispatch pc=72, inst=LOAD_CONST(arg=2, lineno=76)
+stack ['$phi56.0', '$null$58.3', '$58load_global.2', '$hypervector_size68.4', '$hypervector_size70.5']
+dispatch pc=74, inst=BINARY_OP(arg=5, lineno=76)
+stack ['$phi56.0', '$null$58.3', '$58load_global.2', '$hypervector_size68.4', '$hypervector_size70.5', '$const72.6']
+dispatch pc=78, inst=CALL(arg=2, lineno=76)
+stack ['$phi56.0', '$null$58.3', '$58load_global.2', '$hypervector_size68.4', '$binop_mul74.7']
+dispatch pc=86, inst=GET_ITER(arg=None, lineno=76)
+stack ['$phi56.0', '$78call.8']
+end state. edges=[Edge(pc=88, stack=('$phi56.0', '$86get_iter.9'), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=88 nstack_initial=2)])
+stack: ['$phi88.0', '$phi88.1']
+state.pc_initial: State(pc_initial=88 nstack_initial=2)
+dispatch pc=88, inst=FOR_ITER(arg=30, lineno=76)
+stack ['$phi88.0', '$phi88.1']
+end state. edges=[Edge(pc=152, stack=('$phi88.0', '$phi88.1', '$88for_iter.3'), blockstack=(), npush=0), Edge(pc=92, stack=('$phi88.0', '$phi88.1', '$88for_iter.3'), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=152 nstack_initial=3), State(pc_initial=92 nstack_initial=3)])
+stack: ['$phi152.0', '$phi152.1', '$phi152.2']
+state.pc_initial: State(pc_initial=152 nstack_initial=3)
+dispatch pc=152, inst=END_FOR(arg=None, lineno=76)
+stack ['$phi152.0', '$phi152.1', '$phi152.2']
+dispatch pc=154, inst=JUMP_BACKWARD(arg=52, lineno=76)
+stack ['$phi152.0']
+end state. edges=[Edge(pc=52, stack=('$phi152.0',), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=92 nstack_initial=3), State(pc_initial=52 nstack_initial=1)])
+stack: ['$phi92.0', '$phi92.1', '$phi92.2']
+state.pc_initial: State(pc_initial=92 nstack_initial=3)
+dispatch pc=92, inst=STORE_FAST(arg=3, lineno=76)
+stack ['$phi92.0', '$phi92.1', '$phi92.2']
+dispatch pc=94, inst=LOAD_FAST(arg=3, lineno=77)
+stack ['$phi92.0', '$phi92.1']
+dispatch pc=96, inst=LOAD_CONST(arg=3, lineno=77)
+stack ['$phi92.0', '$phi92.1', '$k94.3']
+dispatch pc=98, inst=BINARY_OP(arg=2, lineno=77)
+stack ['$phi92.0', '$phi92.1', '$k94.3', '$const96.4']
+dispatch pc=102, inst=STORE_FAST(arg=4, lineno=77)
+stack ['$phi92.0', '$phi92.1', '$binop_floordiv98.5']
+dispatch pc=104, inst=LOAD_FAST(arg=3, lineno=78)
+stack ['$phi92.0', '$phi92.1']
+dispatch pc=106, inst=LOAD_CONST(arg=3, lineno=78)
+stack ['$phi92.0', '$phi92.1', '$k104.6']
+dispatch pc=108, inst=BINARY_OP(arg=6, lineno=78)
+stack ['$phi92.0', '$phi92.1', '$k104.6', '$const106.7']
+dispatch pc=112, inst=STORE_FAST(arg=5, lineno=78)
+stack ['$phi92.0', '$phi92.1', '$binop_mod108.8']
+dispatch pc=114, inst=LOAD_FAST(arg=1, lineno=79)
+stack ['$phi92.0', '$phi92.1']
+dispatch pc=116, inst=LOAD_FAST(arg=2, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9']
+dispatch pc=118, inst=LOAD_FAST(arg=4, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$i116.10']
+dispatch pc=120, inst=BUILD_TUPLE(arg=2, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$i116.10', '$chunk118.11']
+dispatch pc=122, inst=COPY(arg=2, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12']
+dispatch pc=124, inst=COPY(arg=2, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$X114.9']
+dispatch pc=126, inst=BINARY_SUBSCR(arg=None, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$X114.9', '$120build_tuple.12']
+dispatch pc=130, inst=LOAD_CONST(arg=4, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$126binary_subscr.13']
+dispatch pc=132, inst=LOAD_FAST(arg=5, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$126binary_subscr.13', '$const130.14']
+dispatch pc=134, inst=BINARY_OP(arg=3, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$126binary_subscr.13', '$const130.14', '$pos132.15']
+dispatch pc=138, inst=BINARY_OP(arg=20, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$126binary_subscr.13', '$binop_lshift134.16']
+dispatch pc=142, inst=SWAP(arg=3, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$X114.9', '$120build_tuple.12', '$binop_ior138.17']
+dispatch pc=144, inst=SWAP(arg=2, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$binop_ior138.17', '$120build_tuple.12', '$X114.9']
+dispatch pc=146, inst=STORE_SUBSCR(arg=None, lineno=79)
+stack ['$phi92.0', '$phi92.1', '$binop_ior138.17', '$X114.9', '$120build_tuple.12']
+dispatch pc=150, inst=JUMP_BACKWARD(arg=32, lineno=79)
+stack ['$phi92.0', '$phi92.1']
+end state. edges=[Edge(pc=88, stack=('$phi92.0', '$phi92.1'), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=52 nstack_initial=1), State(pc_initial=88 nstack_initial=2)])
+pending: deque([State(pc_initial=88 nstack_initial=2)])
+-------------------------Prune PHIs-------------------------
+Used_phis: defaultdict(<class 'set'>,
+            {State(pc_initial=0 nstack_initial=0): set(),
+             State(pc_initial=52 nstack_initial=1): {'$phi52.0'},
+             State(pc_initial=56 nstack_initial=2): {'$phi56.1'},
+             State(pc_initial=88 nstack_initial=2): {'$phi88.1'},
+             State(pc_initial=92 nstack_initial=3): {'$phi92.2'},
+             State(pc_initial=152 nstack_initial=3): set(),
+             State(pc_initial=156 nstack_initial=2): set()})
+defmap: {'$phi152.2': State(pc_initial=88 nstack_initial=2),
+ '$phi156.1': State(pc_initial=52 nstack_initial=1),
+ '$phi52.0': State(pc_initial=0 nstack_initial=0),
+ '$phi56.1': State(pc_initial=52 nstack_initial=1),
+ '$phi88.1': State(pc_initial=56 nstack_initial=2),
+ '$phi92.2': State(pc_initial=88 nstack_initial=2)}
+phismap: defaultdict(<class 'set'>,
+            {'$phi152.0': {('$phi88.0', State(pc_initial=88 nstack_initial=2))},
+             '$phi152.1': {('$phi88.1', State(pc_initial=88 nstack_initial=2))},
+             '$phi152.2': {('$88for_iter.3',
+                            State(pc_initial=88 nstack_initial=2))},
+             '$phi156.0': {('$phi52.0', State(pc_initial=52 nstack_initial=1))},
+             '$phi156.1': {('$52for_iter.2',
+                            State(pc_initial=52 nstack_initial=1))},
+             '$phi52.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0)),
+                          ('$phi152.0',
+                           State(pc_initial=152 nstack_initial=3))},
+             '$phi56.0': {('$phi52.0', State(pc_initial=52 nstack_initial=1))},
+             '$phi56.1': {('$52for_iter.2',
+                           State(pc_initial=52 nstack_initial=1))},
+             '$phi88.0': {('$phi56.0', State(pc_initial=56 nstack_initial=2)),
+                          ('$phi92.0', State(pc_initial=92 nstack_initial=3))},
+             '$phi88.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2)),
+                          ('$phi92.1', State(pc_initial=92 nstack_initial=3))},
+             '$phi92.0': {('$phi88.0', State(pc_initial=88 nstack_initial=2))},
+             '$phi92.1': {('$phi88.1', State(pc_initial=88 nstack_initial=2))},
+             '$phi92.2': {('$88for_iter.3',
+                           State(pc_initial=88 nstack_initial=2))}})
+changing phismap: defaultdict(<class 'set'>,
+            {'$phi152.0': {('$phi56.0', State(pc_initial=56 nstack_initial=2)),
+                           ('$phi92.0', State(pc_initial=92 nstack_initial=3))},
+             '$phi152.1': {('$86get_iter.9',
+                            State(pc_initial=56 nstack_initial=2)),
+                           ('$phi92.1', State(pc_initial=92 nstack_initial=3))},
+             '$phi152.2': {('$88for_iter.3',
+                            State(pc_initial=88 nstack_initial=2))},
+             '$phi156.0': {('$50get_iter.7',
+                            State(pc_initial=0 nstack_initial=0)),
+                           ('$phi152.0',
+                            State(pc_initial=152 nstack_initial=3))},
+             '$phi156.1': {('$52for_iter.2',
+                            State(pc_initial=52 nstack_initial=1))},
+             '$phi52.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0)),
+                          ('$phi56.0', State(pc_initial=56 nstack_initial=2)),
+                          ('$phi92.0', State(pc_initial=92 nstack_initial=3))},
+             '$phi56.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0)),
+                          ('$phi56.0', State(pc_initial=56 nstack_initial=2)),
+                          ('$phi92.0', State(pc_initial=92 nstack_initial=3))},
+             '$phi56.1': {('$52for_iter.2',
+                           State(pc_initial=52 nstack_initial=1))},
+             '$phi88.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0)),
+                          ('$phi88.0', State(pc_initial=88 nstack_initial=2))},
+             '$phi88.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2)),
+                          ('$phi88.1', State(pc_initial=88 nstack_initial=2))},
+             '$phi92.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi92.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2))},
+             '$phi92.2': {('$88for_iter.3',
+                           State(pc_initial=88 nstack_initial=2))}})
+changing phismap: defaultdict(<class 'set'>,
+            {'$phi152.0': {('$50get_iter.7',
+                            State(pc_initial=0 nstack_initial=0))},
+             '$phi152.1': {('$86get_iter.9',
+                            State(pc_initial=56 nstack_initial=2))},
+             '$phi152.2': {('$88for_iter.3',
+                            State(pc_initial=88 nstack_initial=2))},
+             '$phi156.0': {('$50get_iter.7',
+                            State(pc_initial=0 nstack_initial=0))},
+             '$phi156.1': {('$52for_iter.2',
+                            State(pc_initial=52 nstack_initial=1))},
+             '$phi52.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi56.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi56.1': {('$52for_iter.2',
+                           State(pc_initial=52 nstack_initial=1))},
+             '$phi88.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi88.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2))},
+             '$phi92.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi92.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2))},
+             '$phi92.2': {('$88for_iter.3',
+                           State(pc_initial=88 nstack_initial=2))}})
+changing phismap: defaultdict(<class 'set'>,
+            {'$phi152.0': {('$50get_iter.7',
+                            State(pc_initial=0 nstack_initial=0))},
+             '$phi152.1': {('$86get_iter.9',
+                            State(pc_initial=56 nstack_initial=2))},
+             '$phi152.2': {('$88for_iter.3',
+                            State(pc_initial=88 nstack_initial=2))},
+             '$phi156.0': {('$50get_iter.7',
+                            State(pc_initial=0 nstack_initial=0))},
+             '$phi156.1': {('$52for_iter.2',
+                            State(pc_initial=52 nstack_initial=1))},
+             '$phi52.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi56.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi56.1': {('$52for_iter.2',
+                           State(pc_initial=52 nstack_initial=1))},
+             '$phi88.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi88.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2))},
+             '$phi92.0': {('$50get_iter.7',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi92.1': {('$86get_iter.9',
+                           State(pc_initial=56 nstack_initial=2))},
+             '$phi92.2': {('$88for_iter.3',
+                           State(pc_initial=88 nstack_initial=2))}})
+keep phismap: {'$phi52.0': {('$50get_iter.7', State(pc_initial=0 nstack_initial=0))},
+ '$phi56.1': {('$52for_iter.2', State(pc_initial=52 nstack_initial=1))},
+ '$phi88.1': {('$86get_iter.9', State(pc_initial=56 nstack_initial=2))},
+ '$phi92.2': {('$88for_iter.3', State(pc_initial=88 nstack_initial=2))}}
+new_out: defaultdict(<class 'dict'>,
+            {State(pc_initial=0 nstack_initial=0): {'$phi52.0': '$50get_iter.7'},
+             State(pc_initial=52 nstack_initial=1): {'$phi56.1': '$52for_iter.2'},
+             State(pc_initial=56 nstack_initial=2): {'$phi88.1': '$86get_iter.9'},
+             State(pc_initial=88 nstack_initial=2): {'$phi92.2': '$88for_iter.3'}})
+----------------------DONE Prune PHIs-----------------------
+block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'idx': 0, 'res': '$4load_global.0'}), (14, {'res': '$X14.2'}), (16, {'item': '$X14.2', 'res': '$16load_attr.3'}), (36, {'res': '$const36.4'}), (38, {'index': '$const36.4', 'target': '$16load_attr.3', 'res': '$38binary_subscr.5'}), (42, {'func': '$4load_global.0', 'args': ['$38binary_subscr.5'], 'kw_names': None, 'res': '$42call.6'}), (50, {'value': '$42call.6', 'res': '$50get_iter.7'})), outgoing_phis={'$phi52.0': '$50get_iter.7'}, blockstack=(), active_try_block=None, outgoing_edgepushed={52: ('$50get_iter.7',)})
+block_infos State(pc_initial=52 nstack_initial=1):
+AdaptBlockInfo(insts=((52, {'iterator': '$phi52.0', 'pair': '$52for_iter.1', 'indval': '$52for_iter.2', 'pred': '$52for_iter.3'}),), outgoing_phis={'$phi56.1': '$52for_iter.2'}, blockstack=(), active_try_block=None, outgoing_edgepushed={156: ('$phi52.0', '$52for_iter.2'), 56: ('$phi52.0', '$52for_iter.2')})
+block_infos State(pc_initial=56 nstack_initial=2):
+AdaptBlockInfo(insts=((56, {'value': '$phi56.1'}), (58, {'idx': 0, 'res': '$58load_global.2'}), (68, {'res': '$hypervector_size68.4'}), (70, {'res': '$hypervector_size70.5'}), (72, {'res': '$const72.6'}), (74, {'op': '*', 'lhs': '$hypervector_size70.5', 'rhs': '$const72.6', 'res': '$binop_mul74.7'}), (78, {'func': '$58load_global.2', 'args': ['$hypervector_size68.4', '$binop_mul74.7'], 'kw_names': None, 'res': '$78call.8'}), (86, {'value': '$78call.8', 'res': '$86get_iter.9'})), outgoing_phis={'$phi88.1': '$86get_iter.9'}, blockstack=(), active_try_block=None, outgoing_edgepushed={88: ('$phi56.0', '$86get_iter.9')})
+block_infos State(pc_initial=88 nstack_initial=2):
+AdaptBlockInfo(insts=((88, {'iterator': '$phi88.1', 'pair': '$88for_iter.2', 'indval': '$88for_iter.3', 'pred': '$88for_iter.4'}),), outgoing_phis={'$phi92.2': '$88for_iter.3'}, blockstack=(), active_try_block=None, outgoing_edgepushed={152: ('$phi88.0', '$phi88.1', '$88for_iter.3'), 92: ('$phi88.0', '$phi88.1', '$88for_iter.3')})
+block_infos State(pc_initial=92 nstack_initial=3):
+AdaptBlockInfo(insts=((92, {'value': '$phi92.2'}), (94, {'res': '$k94.3'}), (96, {'res': '$const96.4'}), (98, {'op': '//', 'lhs': '$k94.3', 'rhs': '$const96.4', 'res': '$binop_floordiv98.5'}), (102, {'value': '$binop_floordiv98.5'}), (104, {'res': '$k104.6'}), (106, {'res': '$const106.7'}), (108, {'op': '%', 'lhs': '$k104.6', 'rhs': '$const106.7', 'res': '$binop_mod108.8'}), (112, {'value': '$binop_mod108.8'}), (114, {'res': '$X114.9'}), (116, {'res': '$i116.10'}), (118, {'res': '$chunk118.11'}), (120, {'items': ['$i116.10', '$chunk118.11'], 'res': '$120build_tuple.12'}), (126, {'index': '$120build_tuple.12', 'target': '$X114.9', 'res': '$126binary_subscr.13'}), (130, {'res': '$const130.14'}), (132, {'res': '$pos132.15'}), (134, {'op': '<<', 'lhs': '$const130.14', 'rhs': '$pos132.15', 'res': '$binop_lshift134.16'}), (138, {'op': '|=', 'lhs': '$126binary_subscr.13', 'rhs': '$binop_lshift134.16', 'res': '$binop_ior138.17'}), (146, {'target': '$X114.9', 'index': '$120build_tuple.12', 'value': '$binop_ior138.17'}), (150, {})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={88: ('$phi92.0', '$phi92.1')})
+block_infos State(pc_initial=152 nstack_initial=3):
+AdaptBlockInfo(insts=((154, {}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={52: ('$phi152.0',)})
+block_infos State(pc_initial=156 nstack_initial=2):
+AdaptBlockInfo(insts=((158, {'retval': '$const158.2', 'castval': '$158return_const.3'}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+label 0:
+    hypervector_size = arg(0, name=hypervector_size) ['hypervector_size']
+    X = arg(1, name=X)                       ['X']
+    $4load_global.0 = global(range: <class 'range'>) ['$4load_global.0']
+    $16load_attr.3 = getattr(value=X, attr=shape) ['$16load_attr.3', 'X']
+    $const36.4 = const(int, 0)               ['$const36.4']
+    $38binary_subscr.5 = getitem(value=$16load_attr.3, index=$const36.4, fn=<built-in function getitem>) ['$16load_attr.3', '$38binary_subscr.5', '$const36.4']
+    $42call.6 = call $4load_global.0($38binary_subscr.5, func=$4load_global.0, args=[Var($38binary_subscr.5, graphs.py:75)], kws=(), vararg=None, varkwarg=None, target=None) ['$38binary_subscr.5', '$42call.6', '$4load_global.0']
+    $50get_iter.7 = getiter(value=$42call.6) ['$42call.6', '$50get_iter.7']
+    $phi52.0 = $50get_iter.7                 ['$50get_iter.7', '$phi52.0']
+    jump 52                                  []
+label 52:
+    $52for_iter.1 = iternext(value=$phi52.0) ['$52for_iter.1', '$phi52.0']
+    $52for_iter.2 = pair_first(value=$52for_iter.1) ['$52for_iter.1', '$52for_iter.2']
+    $52for_iter.3 = pair_second(value=$52for_iter.1) ['$52for_iter.1', '$52for_iter.3']
+    $phi56.1 = $52for_iter.2                 ['$52for_iter.2', '$phi56.1']
+    branch $52for_iter.3, 56, 156            ['$52for_iter.3']
+label 56:
+    i = $phi56.1                             ['$phi56.1', 'i']
+    $58load_global.2 = global(range: <class 'range'>) ['$58load_global.2']
+    $const72.6 = const(int, 2)               ['$const72.6']
+    $binop_mul74.7 = hypervector_size * $const72.6 ['$binop_mul74.7', '$const72.6', 'hypervector_size']
+    $78call.8 = call $58load_global.2(hypervector_size, $binop_mul74.7, func=$58load_global.2, args=[Var(hypervector_size, graphs.py:72), Var($binop_mul74.7, graphs.py:76)], kws=(), vararg=None, varkwarg=None, target=None) ['$58load_global.2', '$78call.8', '$binop_mul74.7', 'hypervector_size']
+    $86get_iter.9 = getiter(value=$78call.8) ['$78call.8', '$86get_iter.9']
+    $phi88.1 = $86get_iter.9                 ['$86get_iter.9', '$phi88.1']
+    jump 88                                  []
+label 88:
+    $88for_iter.2 = iternext(value=$phi88.1) ['$88for_iter.2', '$phi88.1']
+    $88for_iter.3 = pair_first(value=$88for_iter.2) ['$88for_iter.2', '$88for_iter.3']
+    $88for_iter.4 = pair_second(value=$88for_iter.2) ['$88for_iter.2', '$88for_iter.4']
+    $phi92.2 = $88for_iter.3                 ['$88for_iter.3', '$phi92.2']
+    branch $88for_iter.4, 92, 152            ['$88for_iter.4']
+label 92:
+    k = $phi92.2                             ['$phi92.2', 'k']
+    $const96.4 = const(int, 32)              ['$const96.4']
+    chunk = k // $const96.4                  ['$const96.4', 'chunk', 'k']
+    $const106.7 = const(int, 32)             ['$const106.7']
+    pos = k % $const106.7                    ['$const106.7', 'k', 'pos']
+    $120build_tuple.12 = build_tuple(items=[Var(i, graphs.py:75), Var(chunk, graphs.py:77)]) ['$120build_tuple.12', 'chunk', 'i']
+    $126binary_subscr.13 = getitem(value=X, index=$120build_tuple.12, fn=<built-in function getitem>) ['$120build_tuple.12', '$126binary_subscr.13', 'X']
+    $const130.14 = const(int, 1)             ['$const130.14']
+    $binop_lshift134.16 = $const130.14 << pos ['$binop_lshift134.16', '$const130.14', 'pos']
+    $binop_ior138.17 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$126binary_subscr.13, rhs=$binop_lshift134.16, static_lhs=Undefined, static_rhs=Undefined) ['$126binary_subscr.13', '$binop_ior138.17', '$binop_lshift134.16']
+    X[$120build_tuple.12] = $binop_ior138.17 ['$120build_tuple.12', '$binop_ior138.17', 'X']
+    jump 88                                  []
+label 152:
+    jump 52                                  []
+label 156:
+    $const158.2 = const(NoneType, None)      ['$const158.2']
+    $158return_const.3 = cast(value=$const158.2) ['$158return_const.3', '$const158.2']
+    return $158return_const.3                ['$158return_const.3']
+
+==== SSA block analysis pass on 0
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: hypervector_size = arg(0, name=hypervector_size)
+on stmt: X = arg(1, name=X)
+on stmt: $4load_global.0 = global(range: <class 'range'>)
+on stmt: $16load_attr.3 = getattr(value=X, attr=shape)
+on stmt: $const36.4 = const(int, 0)
+on stmt: $38binary_subscr.5 = static_getitem(value=$16load_attr.3, index=0, index_var=$const36.4, fn=<built-in function getitem>)
+on stmt: $42call.6 = call $4load_global.0($38binary_subscr.5, func=$4load_global.0, args=[Var($38binary_subscr.5, graphs.py:75)], kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $50get_iter.7 = getiter(value=$42call.6)
+on stmt: $phi52.0 = $50get_iter.7
+on stmt: jump 52
+==== SSA block analysis pass on 52
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: $52for_iter.1 = iternext(value=$phi52.0)
+on stmt: $52for_iter.2 = pair_first(value=$52for_iter.1)
+on stmt: $52for_iter.3 = pair_second(value=$52for_iter.1)
+on stmt: $phi56.1 = $52for_iter.2
+on stmt: branch $52for_iter.3, 56, 156
+==== SSA block analysis pass on 56
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: i = $phi56.1
+on stmt: $58load_global.2 = global(range: <class 'range'>)
+on stmt: $const72.6 = const(int, 2)
+on stmt: $binop_mul74.7 = hypervector_size * $const72.6
+on stmt: $78call.8 = call $58load_global.2(hypervector_size, $binop_mul74.7, func=$58load_global.2, args=[Var(hypervector_size, graphs.py:72), Var($binop_mul74.7, graphs.py:76)], kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $86get_iter.9 = getiter(value=$78call.8)
+on stmt: $phi88.1 = $86get_iter.9
+on stmt: jump 88
+==== SSA block analysis pass on 88
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: $88for_iter.2 = iternext(value=$phi88.1)
+on stmt: $88for_iter.3 = pair_first(value=$88for_iter.2)
+on stmt: $88for_iter.4 = pair_second(value=$88for_iter.2)
+on stmt: $phi92.2 = $88for_iter.3
+on stmt: branch $88for_iter.4, 92, 152
+==== SSA block analysis pass on 92
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: k = $phi92.2
+on stmt: $const96.4 = const(int, 32)
+on stmt: chunk = k // $const96.4
+on stmt: $const106.7 = const(int, 32)
+on stmt: pos = k % $const106.7
+on stmt: $120build_tuple.12 = build_tuple(items=[Var(i, graphs.py:75), Var(chunk, graphs.py:77)])
+on stmt: $126binary_subscr.13 = getitem(value=X, index=$120build_tuple.12, fn=<built-in function getitem>)
+on stmt: $const130.14 = const(int, 1)
+on stmt: $binop_lshift134.16 = $const130.14 << pos
+on stmt: $binop_ior138.17 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$126binary_subscr.13, rhs=$binop_lshift134.16, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$120build_tuple.12] = $binop_ior138.17
+on stmt: jump 88
+==== SSA block analysis pass on 152
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: jump 52
+==== SSA block analysis pass on 156
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e8df40>
+on stmt: $const158.2 = const(NoneType, None)
+on stmt: $158return_const.3 = cast(value=$const158.2)
+on stmt: return $158return_const.3
+defs defaultdict(<class 'list'>,
+            {'$120build_tuple.12': [(<numba.core.ir.Assign object at 0x771099eac0b0>,
+                                     92)],
+             '$126binary_subscr.13': [(<numba.core.ir.Assign object at 0x771099eac200>,
+                                       92)],
+             '$158return_const.3': [(<numba.core.ir.Assign object at 0x771099eac3e0>,
+                                     156)],
+             '$16load_attr.3': [(<numba.core.ir.Assign object at 0x771099e8e390>,
+                                 0)],
+             '$38binary_subscr.5': [(<numba.core.ir.Assign object at 0x771099e8e2d0>,
+                                     0)],
+             '$42call.6': [(<numba.core.ir.Assign object at 0x771099e8e990>,
+                            0)],
+             '$4load_global.0': [(<numba.core.ir.Assign object at 0x771099e8d5b0>,
+                                  0)],
+             '$50get_iter.7': [(<numba.core.ir.Assign object at 0x771099e8e9f0>,
+                                0)],
+             '$52for_iter.1': [(<numba.core.ir.Assign object at 0x771099e8eb70>,
+                                52)],
+             '$52for_iter.2': [(<numba.core.ir.Assign object at 0x771099e8ec00>,
+                                52)],
+             '$52for_iter.3': [(<numba.core.ir.Assign object at 0x771099e8ec90>,
+                                52)],
+             '$58load_global.2': [(<numba.core.ir.Assign object at 0x771099e8eea0>,
+                                   56)],
+             '$78call.8': [(<numba.core.ir.Assign object at 0x771099e8f260>,
+                            56)],
+             '$86get_iter.9': [(<numba.core.ir.Assign object at 0x771099e8f2f0>,
+                                56)],
+             '$88for_iter.2': [(<numba.core.ir.Assign object at 0x771099e8f470>,
+                                88)],
+             '$88for_iter.3': [(<numba.core.ir.Assign object at 0x771099e8f530>,
+                                88)],
+             '$88for_iter.4': [(<numba.core.ir.Assign object at 0x771099e8f620>,
+                                88)],
+             '$binop_ior138.17': [(<numba.core.ir.Assign object at 0x771099eac650>,
+                                   92)],
+             '$binop_lshift134.16': [(<numba.core.ir.Assign object at 0x771099eac530>,
+                                      92)],
+             '$binop_mul74.7': [(<numba.core.ir.Assign object at 0x771099e8f170>,
+                                 56)],
+             '$const106.7': [(<numba.core.ir.Assign object at 0x771099e8fe30>,
+                              92)],
+             '$const130.14': [(<numba.core.ir.Assign object at 0x771099eac2f0>,
+                               92)],
+             '$const158.2': [(<numba.core.ir.Assign object at 0x771099e8d3a0>,
+                              156)],
+             '$const36.4': [(<numba.core.ir.Assign object at 0x771099e8e7b0>,
+                             0)],
+             '$const72.6': [(<numba.core.ir.Assign object at 0x771099e8f080>,
+                             56)],
+             '$const96.4': [(<numba.core.ir.Assign object at 0x771099e8fa10>,
+                             92)],
+             '$phi52.0': [(<numba.core.ir.Assign object at 0x771099e8e660>, 0)],
+             '$phi56.1': [(<numba.core.ir.Assign object at 0x771099e8eae0>,
+                           52)],
+             '$phi88.1': [(<numba.core.ir.Assign object at 0x771099e8efc0>,
+                           56)],
+             '$phi92.2': [(<numba.core.ir.Assign object at 0x771099e8f6b0>,
+                           88)],
+             'X': [(<numba.core.ir.Assign object at 0x771099e8e4b0>, 0)],
+             'chunk': [(<numba.core.ir.Assign object at 0x771099e8fb60>, 92)],
+             'hypervector_size': [(<numba.core.ir.Assign object at 0x771099e8e720>,
+                                   0)],
+             'i': [(<numba.core.ir.Assign object at 0x771099e8ede0>, 56)],
+             'k': [(<numba.core.ir.Assign object at 0x771099e8f830>, 92)],
+             'pos': [(<numba.core.ir.Assign object at 0x771099e8ff80>, 92)]})
+SSA violators <numba.core.utils.OrderedSet object at 0x77109ac96750>
+bytecode dump:
+>          0	NOP(arg=None, lineno=121)
+           2	RESUME(arg=0, lineno=121)
+           4	LOAD_FAST(arg=0, lineno=124)
+           6	LOAD_FAST(arg=4, lineno=124)
+           8	LOAD_CONST(arg=0, lineno=124)
+          10	LOAD_CONST(arg=0, lineno=124)
+          12	BUILD_SLICE(arg=2, lineno=124)
+          14	BUILD_TUPLE(arg=2, lineno=124)
+          16	BINARY_SUBSCR(arg=None, lineno=124)
+          20	GET_ITER(arg=None, lineno=124)
+>         22	FOR_ITER(arg=71, lineno=124)
+          26	STORE_FAST(arg=6, lineno=124)
+          28	LOAD_FAST(arg=6, lineno=125)
+          30	LOAD_CONST(arg=1, lineno=125)
+          32	BINARY_OP(arg=2, lineno=125)
+          36	STORE_FAST(arg=7, lineno=125)
+          38	LOAD_FAST(arg=6, lineno=126)
+          40	LOAD_CONST(arg=1, lineno=126)
+          42	BINARY_OP(arg=6, lineno=126)
+          46	STORE_FAST(arg=8, lineno=126)
+          48	LOAD_FAST(arg=5, lineno=128)
+          50	LOAD_FAST(arg=2, lineno=128)
+          52	LOAD_FAST(arg=3, lineno=128)
+          54	BINARY_OP(arg=0, lineno=128)
+          58	LOAD_FAST(arg=7, lineno=128)
+          60	BUILD_TUPLE(arg=2, lineno=128)
+          62	COPY(arg=2, lineno=128)
+          64	COPY(arg=2, lineno=128)
+          66	BINARY_SUBSCR(arg=None, lineno=128)
+          70	LOAD_CONST(arg=2, lineno=128)
+          72	LOAD_FAST(arg=8, lineno=128)
+          74	BINARY_OP(arg=3, lineno=128)
+          78	BINARY_OP(arg=20, lineno=128)
+          82	SWAP(arg=3, lineno=128)
+          84	SWAP(arg=2, lineno=128)
+          86	STORE_SUBSCR(arg=None, lineno=128)
+          90	LOAD_FAST(arg=6, lineno=130)
+          92	LOAD_FAST(arg=1, lineno=130)
+          94	BINARY_OP(arg=0, lineno=130)
+          98	LOAD_CONST(arg=1, lineno=130)
+         100	BINARY_OP(arg=2, lineno=130)
+         104	STORE_FAST(arg=7, lineno=130)
+         106	LOAD_FAST(arg=6, lineno=131)
+         108	LOAD_FAST(arg=1, lineno=131)
+         110	BINARY_OP(arg=0, lineno=131)
+         114	LOAD_CONST(arg=1, lineno=131)
+         116	BINARY_OP(arg=6, lineno=131)
+         120	STORE_FAST(arg=8, lineno=131)
+         122	LOAD_FAST(arg=5, lineno=132)
+         124	LOAD_FAST(arg=2, lineno=132)
+         126	LOAD_FAST(arg=3, lineno=132)
+         128	BINARY_OP(arg=0, lineno=132)
+         132	LOAD_FAST(arg=7, lineno=132)
+         134	BUILD_TUPLE(arg=2, lineno=132)
+         136	COPY(arg=2, lineno=132)
+         138	COPY(arg=2, lineno=132)
+         140	BINARY_SUBSCR(arg=None, lineno=132)
+         144	LOAD_CONST(arg=2, lineno=132)
+         146	LOAD_FAST(arg=8, lineno=132)
+         148	BINARY_OP(arg=3, lineno=132)
+         152	UNARY_INVERT(arg=None, lineno=132)
+         154	BINARY_OP(arg=14, lineno=132)
+         158	SWAP(arg=3, lineno=132)
+         160	SWAP(arg=2, lineno=132)
+         162	STORE_SUBSCR(arg=None, lineno=132)
+         166	JUMP_BACKWARD(arg=73, lineno=132)
+>        168	END_FOR(arg=None, lineno=124)
+         170	RETURN_CONST(arg=0, lineno=124)
+pending: deque([State(pc_initial=0 nstack_initial=0)])
+stack: []
+state.pc_initial: State(pc_initial=0 nstack_initial=0)
+dispatch pc=0, inst=NOP(arg=None, lineno=121)
+stack []
+dispatch pc=2, inst=RESUME(arg=0, lineno=121)
+stack []
+dispatch pc=4, inst=LOAD_FAST(arg=0, lineno=124)
+stack []
+dispatch pc=6, inst=LOAD_FAST(arg=4, lineno=124)
+stack ['$hypervectors4.0']
+dispatch pc=8, inst=LOAD_CONST(arg=0, lineno=124)
+stack ['$hypervectors4.0', '$symbol6.1']
+dispatch pc=10, inst=LOAD_CONST(arg=0, lineno=124)
+stack ['$hypervectors4.0', '$symbol6.1', '$const8.2']
+dispatch pc=12, inst=BUILD_SLICE(arg=2, lineno=124)
+stack ['$hypervectors4.0', '$symbol6.1', '$const8.2', '$const10.3']
+dispatch pc=14, inst=BUILD_TUPLE(arg=2, lineno=124)
+stack ['$hypervectors4.0', '$symbol6.1', '$12build_slice.5']
+dispatch pc=16, inst=BINARY_SUBSCR(arg=None, lineno=124)
+stack ['$hypervectors4.0', '$14build_tuple.6']
+dispatch pc=20, inst=GET_ITER(arg=None, lineno=124)
+stack ['$16binary_subscr.7']
+end state. edges=[Edge(pc=22, stack=('$20get_iter.8',), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=22 nstack_initial=1)])
+stack: ['$phi22.0']
+state.pc_initial: State(pc_initial=22 nstack_initial=1)
+dispatch pc=22, inst=FOR_ITER(arg=71, lineno=124)
+stack ['$phi22.0']
+end state. edges=[Edge(pc=168, stack=('$phi22.0', '$22for_iter.2'), blockstack=(), npush=0), Edge(pc=26, stack=('$phi22.0', '$22for_iter.2'), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=168 nstack_initial=2), State(pc_initial=26 nstack_initial=2)])
+stack: ['$phi168.0', '$phi168.1']
+state.pc_initial: State(pc_initial=168 nstack_initial=2)
+dispatch pc=168, inst=END_FOR(arg=None, lineno=124)
+stack ['$phi168.0', '$phi168.1']
+dispatch pc=170, inst=RETURN_CONST(arg=0, lineno=124)
+stack []
+end state. edges=[]
+pending: deque([State(pc_initial=26 nstack_initial=2)])
+stack: ['$phi26.0', '$phi26.1']
+state.pc_initial: State(pc_initial=26 nstack_initial=2)
+dispatch pc=26, inst=STORE_FAST(arg=6, lineno=124)
+stack ['$phi26.0', '$phi26.1']
+dispatch pc=28, inst=LOAD_FAST(arg=6, lineno=125)
+stack ['$phi26.0']
+dispatch pc=30, inst=LOAD_CONST(arg=1, lineno=125)
+stack ['$phi26.0', '$k28.2']
+dispatch pc=32, inst=BINARY_OP(arg=2, lineno=125)
+stack ['$phi26.0', '$k28.2', '$const30.3']
+dispatch pc=36, inst=STORE_FAST(arg=7, lineno=125)
+stack ['$phi26.0', '$binop_floordiv32.4']
+dispatch pc=38, inst=LOAD_FAST(arg=6, lineno=126)
+stack ['$phi26.0']
+dispatch pc=40, inst=LOAD_CONST(arg=1, lineno=126)
+stack ['$phi26.0', '$k38.5']
+dispatch pc=42, inst=BINARY_OP(arg=6, lineno=126)
+stack ['$phi26.0', '$k38.5', '$const40.6']
+dispatch pc=46, inst=STORE_FAST(arg=8, lineno=126)
+stack ['$phi26.0', '$binop_mod42.7']
+dispatch pc=48, inst=LOAD_FAST(arg=5, lineno=128)
+stack ['$phi26.0']
+dispatch pc=50, inst=LOAD_FAST(arg=2, lineno=128)
+stack ['$phi26.0', '$X48.8']
+dispatch pc=52, inst=LOAD_FAST(arg=3, lineno=128)
+stack ['$phi26.0', '$X48.8', '$graph_index50.9']
+dispatch pc=54, inst=BINARY_OP(arg=0, lineno=128)
+stack ['$phi26.0', '$X48.8', '$graph_index50.9', '$node52.10']
+dispatch pc=58, inst=LOAD_FAST(arg=7, lineno=128)
+stack ['$phi26.0', '$X48.8', '$binop_add54.11']
+dispatch pc=60, inst=BUILD_TUPLE(arg=2, lineno=128)
+stack ['$phi26.0', '$X48.8', '$binop_add54.11', '$chunk58.12']
+dispatch pc=62, inst=COPY(arg=2, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13']
+dispatch pc=64, inst=COPY(arg=2, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$X48.8']
+dispatch pc=66, inst=BINARY_SUBSCR(arg=None, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$X48.8', '$60build_tuple.13']
+dispatch pc=70, inst=LOAD_CONST(arg=2, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$66binary_subscr.14']
+dispatch pc=72, inst=LOAD_FAST(arg=8, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$66binary_subscr.14', '$const70.15']
+dispatch pc=74, inst=BINARY_OP(arg=3, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$66binary_subscr.14', '$const70.15', '$pos72.16']
+dispatch pc=78, inst=BINARY_OP(arg=20, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$66binary_subscr.14', '$binop_lshift74.17']
+dispatch pc=82, inst=SWAP(arg=3, lineno=128)
+stack ['$phi26.0', '$X48.8', '$60build_tuple.13', '$binop_ior78.18']
+dispatch pc=84, inst=SWAP(arg=2, lineno=128)
+stack ['$phi26.0', '$binop_ior78.18', '$60build_tuple.13', '$X48.8']
+dispatch pc=86, inst=STORE_SUBSCR(arg=None, lineno=128)
+stack ['$phi26.0', '$binop_ior78.18', '$X48.8', '$60build_tuple.13']
+dispatch pc=90, inst=LOAD_FAST(arg=6, lineno=130)
+stack ['$phi26.0']
+dispatch pc=92, inst=LOAD_FAST(arg=1, lineno=130)
+stack ['$phi26.0', '$k90.19']
+dispatch pc=94, inst=BINARY_OP(arg=0, lineno=130)
+stack ['$phi26.0', '$k90.19', '$hypervector_size92.20']
+dispatch pc=98, inst=LOAD_CONST(arg=1, lineno=130)
+stack ['$phi26.0', '$binop_add94.21']
+dispatch pc=100, inst=BINARY_OP(arg=2, lineno=130)
+stack ['$phi26.0', '$binop_add94.21', '$const98.22']
+dispatch pc=104, inst=STORE_FAST(arg=7, lineno=130)
+stack ['$phi26.0', '$binop_floordiv100.23']
+dispatch pc=106, inst=LOAD_FAST(arg=6, lineno=131)
+stack ['$phi26.0']
+dispatch pc=108, inst=LOAD_FAST(arg=1, lineno=131)
+stack ['$phi26.0', '$k106.24']
+dispatch pc=110, inst=BINARY_OP(arg=0, lineno=131)
+stack ['$phi26.0', '$k106.24', '$hypervector_size108.25']
+dispatch pc=114, inst=LOAD_CONST(arg=1, lineno=131)
+stack ['$phi26.0', '$binop_add110.26']
+dispatch pc=116, inst=BINARY_OP(arg=6, lineno=131)
+stack ['$phi26.0', '$binop_add110.26', '$const114.27']
+dispatch pc=120, inst=STORE_FAST(arg=8, lineno=131)
+stack ['$phi26.0', '$binop_mod116.28']
+dispatch pc=122, inst=LOAD_FAST(arg=5, lineno=132)
+stack ['$phi26.0']
+dispatch pc=124, inst=LOAD_FAST(arg=2, lineno=132)
+stack ['$phi26.0', '$X122.29']
+dispatch pc=126, inst=LOAD_FAST(arg=3, lineno=132)
+stack ['$phi26.0', '$X122.29', '$graph_index124.30']
+dispatch pc=128, inst=BINARY_OP(arg=0, lineno=132)
+stack ['$phi26.0', '$X122.29', '$graph_index124.30', '$node126.31']
+dispatch pc=132, inst=LOAD_FAST(arg=7, lineno=132)
+stack ['$phi26.0', '$X122.29', '$binop_add128.32']
+dispatch pc=134, inst=BUILD_TUPLE(arg=2, lineno=132)
+stack ['$phi26.0', '$X122.29', '$binop_add128.32', '$chunk132.33']
+dispatch pc=136, inst=COPY(arg=2, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34']
+dispatch pc=138, inst=COPY(arg=2, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$X122.29']
+dispatch pc=140, inst=BINARY_SUBSCR(arg=None, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$X122.29', '$134build_tuple.34']
+dispatch pc=144, inst=LOAD_CONST(arg=2, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$140binary_subscr.35']
+dispatch pc=146, inst=LOAD_FAST(arg=8, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$140binary_subscr.35', '$const144.36']
+dispatch pc=148, inst=BINARY_OP(arg=3, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$140binary_subscr.35', '$const144.36', '$pos146.37']
+dispatch pc=152, inst=UNARY_INVERT(arg=None, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$140binary_subscr.35', '$binop_lshift148.38']
+dispatch pc=154, inst=BINARY_OP(arg=14, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$140binary_subscr.35', '$152unary_invert.39']
+dispatch pc=158, inst=SWAP(arg=3, lineno=132)
+stack ['$phi26.0', '$X122.29', '$134build_tuple.34', '$binop_iand154.40']
+dispatch pc=160, inst=SWAP(arg=2, lineno=132)
+stack ['$phi26.0', '$binop_iand154.40', '$134build_tuple.34', '$X122.29']
+dispatch pc=162, inst=STORE_SUBSCR(arg=None, lineno=132)
+stack ['$phi26.0', '$binop_iand154.40', '$X122.29', '$134build_tuple.34']
+dispatch pc=166, inst=JUMP_BACKWARD(arg=73, lineno=132)
+stack ['$phi26.0']
+end state. edges=[Edge(pc=22, stack=('$phi26.0',), blockstack=(), npush=0)]
+pending: deque([State(pc_initial=22 nstack_initial=1)])
+-------------------------Prune PHIs-------------------------
+Used_phis: defaultdict(<class 'set'>,
+            {State(pc_initial=0 nstack_initial=0): set(),
+             State(pc_initial=22 nstack_initial=1): {'$phi22.0'},
+             State(pc_initial=26 nstack_initial=2): {'$phi26.1'},
+             State(pc_initial=168 nstack_initial=2): set()})
+defmap: {'$phi168.1': State(pc_initial=22 nstack_initial=1),
+ '$phi22.0': State(pc_initial=0 nstack_initial=0),
+ '$phi26.1': State(pc_initial=22 nstack_initial=1)}
+phismap: defaultdict(<class 'set'>,
+            {'$phi168.0': {('$phi22.0', State(pc_initial=22 nstack_initial=1))},
+             '$phi168.1': {('$22for_iter.2',
+                            State(pc_initial=22 nstack_initial=1))},
+             '$phi22.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0)),
+                          ('$phi26.0', State(pc_initial=26 nstack_initial=2))},
+             '$phi26.0': {('$phi22.0', State(pc_initial=22 nstack_initial=1))},
+             '$phi26.1': {('$22for_iter.2',
+                           State(pc_initial=22 nstack_initial=1))}})
+changing phismap: defaultdict(<class 'set'>,
+            {'$phi168.0': {('$20get_iter.8',
+                            State(pc_initial=0 nstack_initial=0)),
+                           ('$phi26.0', State(pc_initial=26 nstack_initial=2))},
+             '$phi168.1': {('$22for_iter.2',
+                            State(pc_initial=22 nstack_initial=1))},
+             '$phi22.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0)),
+                          ('$phi22.0', State(pc_initial=22 nstack_initial=1))},
+             '$phi26.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi26.1': {('$22for_iter.2',
+                           State(pc_initial=22 nstack_initial=1))}})
+changing phismap: defaultdict(<class 'set'>,
+            {'$phi168.0': {('$20get_iter.8',
+                            State(pc_initial=0 nstack_initial=0))},
+             '$phi168.1': {('$22for_iter.2',
+                            State(pc_initial=22 nstack_initial=1))},
+             '$phi22.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi26.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi26.1': {('$22for_iter.2',
+                           State(pc_initial=22 nstack_initial=1))}})
+changing phismap: defaultdict(<class 'set'>,
+            {'$phi168.0': {('$20get_iter.8',
+                            State(pc_initial=0 nstack_initial=0))},
+             '$phi168.1': {('$22for_iter.2',
+                            State(pc_initial=22 nstack_initial=1))},
+             '$phi22.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi26.0': {('$20get_iter.8',
+                           State(pc_initial=0 nstack_initial=0))},
+             '$phi26.1': {('$22for_iter.2',
+                           State(pc_initial=22 nstack_initial=1))}})
+keep phismap: {'$phi22.0': {('$20get_iter.8', State(pc_initial=0 nstack_initial=0))},
+ '$phi26.1': {('$22for_iter.2', State(pc_initial=22 nstack_initial=1))}}
+new_out: defaultdict(<class 'dict'>,
+            {State(pc_initial=0 nstack_initial=0): {'$phi22.0': '$20get_iter.8'},
+             State(pc_initial=22 nstack_initial=1): {'$phi26.1': '$22for_iter.2'}})
+----------------------DONE Prune PHIs-----------------------
+block_infos State(pc_initial=0 nstack_initial=0):
+AdaptBlockInfo(insts=((0, {}), (2, {}), (4, {'res': '$hypervectors4.0'}), (6, {'res': '$symbol6.1'}), (8, {'res': '$const8.2'}), (10, {'res': '$const10.3'}), (12, {'start': '$const8.2', 'stop': '$const10.3', 'step': None, 'res': '$12build_slice.5', 'slicevar': '$12build_slice.4'}), (14, {'items': ['$symbol6.1', '$12build_slice.5'], 'res': '$14build_tuple.6'}), (16, {'index': '$14build_tuple.6', 'target': '$hypervectors4.0', 'res': '$16binary_subscr.7'}), (20, {'value': '$16binary_subscr.7', 'res': '$20get_iter.8'})), outgoing_phis={'$phi22.0': '$20get_iter.8'}, blockstack=(), active_try_block=None, outgoing_edgepushed={22: ('$20get_iter.8',)})
+block_infos State(pc_initial=22 nstack_initial=1):
+AdaptBlockInfo(insts=((22, {'iterator': '$phi22.0', 'pair': '$22for_iter.1', 'indval': '$22for_iter.2', 'pred': '$22for_iter.3'}),), outgoing_phis={'$phi26.1': '$22for_iter.2'}, blockstack=(), active_try_block=None, outgoing_edgepushed={168: ('$phi22.0', '$22for_iter.2'), 26: ('$phi22.0', '$22for_iter.2')})
+block_infos State(pc_initial=26 nstack_initial=2):
+AdaptBlockInfo(insts=((26, {'value': '$phi26.1'}), (28, {'res': '$k28.2'}), (30, {'res': '$const30.3'}), (32, {'op': '//', 'lhs': '$k28.2', 'rhs': '$const30.3', 'res': '$binop_floordiv32.4'}), (36, {'value': '$binop_floordiv32.4'}), (38, {'res': '$k38.5'}), (40, {'res': '$const40.6'}), (42, {'op': '%', 'lhs': '$k38.5', 'rhs': '$const40.6', 'res': '$binop_mod42.7'}), (46, {'value': '$binop_mod42.7'}), (48, {'res': '$X48.8'}), (50, {'res': '$graph_index50.9'}), (52, {'res': '$node52.10'}), (54, {'op': '+', 'lhs': '$graph_index50.9', 'rhs': '$node52.10', 'res': '$binop_add54.11'}), (58, {'res': '$chunk58.12'}), (60, {'items': ['$binop_add54.11', '$chunk58.12'], 'res': '$60build_tuple.13'}), (66, {'index': '$60build_tuple.13', 'target': '$X48.8', 'res': '$66binary_subscr.14'}), (70, {'res': '$const70.15'}), (72, {'res': '$pos72.16'}), (74, {'op': '<<', 'lhs': '$const70.15', 'rhs': '$pos72.16', 'res': '$binop_lshift74.17'}), (78, {'op': '|=', 'lhs': '$66binary_subscr.14', 'rhs': '$binop_lshift74.17', 'res': '$binop_ior78.18'}), (86, {'target': '$X48.8', 'index': '$60build_tuple.13', 'value': '$binop_ior78.18'}), (90, {'res': '$k90.19'}), (92, {'res': '$hypervector_size92.20'}), (94, {'op': '+', 'lhs': '$k90.19', 'rhs': '$hypervector_size92.20', 'res': '$binop_add94.21'}), (98, {'res': '$const98.22'}), (100, {'op': '//', 'lhs': '$binop_add94.21', 'rhs': '$const98.22', 'res': '$binop_floordiv100.23'}), (104, {'value': '$binop_floordiv100.23'}), (106, {'res': '$k106.24'}), (108, {'res': '$hypervector_size108.25'}), (110, {'op': '+', 'lhs': '$k106.24', 'rhs': '$hypervector_size108.25', 'res': '$binop_add110.26'}), (114, {'res': '$const114.27'}), (116, {'op': '%', 'lhs': '$binop_add110.26', 'rhs': '$const114.27', 'res': '$binop_mod116.28'}), (120, {'value': '$binop_mod116.28'}), (122, {'res': '$X122.29'}), (124, {'res': '$graph_index124.30'}), (126, {'res': '$node126.31'}), (128, {'op': '+', 'lhs': '$graph_index124.30', 'rhs': '$node126.31', 'res': '$binop_add128.32'}), (132, {'res': '$chunk132.33'}), (134, {'items': ['$binop_add128.32', '$chunk132.33'], 'res': '$134build_tuple.34'}), (140, {'index': '$134build_tuple.34', 'target': '$X122.29', 'res': '$140binary_subscr.35'}), (144, {'res': '$const144.36'}), (146, {'res': '$pos146.37'}), (148, {'op': '<<', 'lhs': '$const144.36', 'rhs': '$pos146.37', 'res': '$binop_lshift148.38'}), (152, {'value': '$binop_lshift148.38', 'res': '$152unary_invert.39'}), (154, {'op': '&=', 'lhs': '$140binary_subscr.35', 'rhs': '$152unary_invert.39', 'res': '$binop_iand154.40'}), (162, {'target': '$X122.29', 'index': '$134build_tuple.34', 'value': '$binop_iand154.40'}), (166, {})), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={22: ('$phi26.0',)})
+block_infos State(pc_initial=168 nstack_initial=2):
+AdaptBlockInfo(insts=((170, {'retval': '$const170.2', 'castval': '$170return_const.3'}),), outgoing_phis={}, blockstack=(), active_try_block=None, outgoing_edgepushed={})
+label 0:
+    hypervectors = arg(0, name=hypervectors) ['hypervectors']
+    hypervector_size = arg(1, name=hypervector_size) ['hypervector_size']
+    graph_index = arg(2, name=graph_index)   ['graph_index']
+    node = arg(3, name=node)                 ['node']
+    symbol = arg(4, name=symbol)             ['symbol']
+    X = arg(5, name=X)                       ['X']
+    $const8.2 = const(NoneType, None)        ['$const8.2']
+    $const10.3 = const(NoneType, None)       ['$const10.3']
+    $12build_slice.4 = global(slice: <class 'slice'>) ['$12build_slice.4']
+    $12build_slice.5 = call $12build_slice.4($const8.2, $const10.3, func=$12build_slice.4, args=(Var($const8.2, graphs.py:124), Var($const10.3, graphs.py:124)), kws=(), vararg=None, varkwarg=None, target=None) ['$12build_slice.4', '$12build_slice.5', '$const10.3', '$const8.2']
+    $14build_tuple.6 = build_tuple(items=[Var(symbol, graphs.py:121), Var($12build_slice.5, graphs.py:124)]) ['$12build_slice.5', '$14build_tuple.6', 'symbol']
+    $16binary_subscr.7 = getitem(value=hypervectors, index=$14build_tuple.6, fn=<built-in function getitem>) ['$14build_tuple.6', '$16binary_subscr.7', 'hypervectors']
+    $20get_iter.8 = getiter(value=$16binary_subscr.7) ['$16binary_subscr.7', '$20get_iter.8']
+    $phi22.0 = $20get_iter.8                 ['$20get_iter.8', '$phi22.0']
+    jump 22                                  []
+label 22:
+    $22for_iter.1 = iternext(value=$phi22.0) ['$22for_iter.1', '$phi22.0']
+    $22for_iter.2 = pair_first(value=$22for_iter.1) ['$22for_iter.1', '$22for_iter.2']
+    $22for_iter.3 = pair_second(value=$22for_iter.1) ['$22for_iter.1', '$22for_iter.3']
+    $phi26.1 = $22for_iter.2                 ['$22for_iter.2', '$phi26.1']
+    branch $22for_iter.3, 26, 168            ['$22for_iter.3']
+label 26:
+    k = $phi26.1                             ['$phi26.1', 'k']
+    $const30.3 = const(int, 32)              ['$const30.3']
+    chunk = k // $const30.3                  ['$const30.3', 'chunk', 'k']
+    $const40.6 = const(int, 32)              ['$const40.6']
+    pos = k % $const40.6                     ['$const40.6', 'k', 'pos']
+    $binop_add54.11 = graph_index + node     ['$binop_add54.11', 'graph_index', 'node']
+    $60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)]) ['$60build_tuple.13', '$binop_add54.11', 'chunk']
+    $66binary_subscr.14 = getitem(value=X, index=$60build_tuple.13, fn=<built-in function getitem>) ['$60build_tuple.13', '$66binary_subscr.14', 'X']
+    $const70.15 = const(int, 1)              ['$const70.15']
+    $binop_lshift74.17 = $const70.15 << pos  ['$binop_lshift74.17', '$const70.15', 'pos']
+    $binop_ior78.18 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$66binary_subscr.14, rhs=$binop_lshift74.17, static_lhs=Undefined, static_rhs=Undefined) ['$66binary_subscr.14', '$binop_ior78.18', '$binop_lshift74.17']
+    X[$60build_tuple.13] = $binop_ior78.18   ['$60build_tuple.13', '$binop_ior78.18', 'X']
+    $binop_add94.21 = k + hypervector_size   ['$binop_add94.21', 'hypervector_size', 'k']
+    $const98.22 = const(int, 32)             ['$const98.22']
+    chunk = $binop_add94.21 // $const98.22   ['$binop_add94.21', '$const98.22', 'chunk']
+    $binop_add110.26 = k + hypervector_size  ['$binop_add110.26', 'hypervector_size', 'k']
+    $const114.27 = const(int, 32)            ['$const114.27']
+    pos = $binop_add110.26 % $const114.27    ['$binop_add110.26', '$const114.27', 'pos']
+    $binop_add128.32 = graph_index + node    ['$binop_add128.32', 'graph_index', 'node']
+    $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk, graphs.py:125)]) ['$134build_tuple.34', '$binop_add128.32', 'chunk']
+    $140binary_subscr.35 = getitem(value=X, index=$134build_tuple.34, fn=<built-in function getitem>) ['$134build_tuple.34', '$140binary_subscr.35', 'X']
+    $const144.36 = const(int, 1)             ['$const144.36']
+    $binop_lshift148.38 = $const144.36 << pos ['$binop_lshift148.38', '$const144.36', 'pos']
+    $152unary_invert.39 = unary(fn=<built-in function invert>, value=$binop_lshift148.38) ['$152unary_invert.39', '$binop_lshift148.38']
+    $binop_iand154.40 = inplace_binop(fn=<built-in function iand>, immutable_fn=<built-in function and_>, lhs=$140binary_subscr.35, rhs=$152unary_invert.39, static_lhs=Undefined, static_rhs=Undefined) ['$140binary_subscr.35', '$152unary_invert.39', '$binop_iand154.40']
+    X[$134build_tuple.34] = $binop_iand154.40 ['$134build_tuple.34', '$binop_iand154.40', 'X']
+    jump 22                                  []
+label 168:
+    $const170.2 = const(NoneType, None)      ['$const170.2']
+    $170return_const.3 = cast(value=$const170.2) ['$170return_const.3', '$const170.2']
+    return $170return_const.3                ['$170return_const.3']
+
+==== SSA block analysis pass on 0
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e06f00>
+on stmt: hypervectors = arg(0, name=hypervectors)
+on stmt: hypervector_size = arg(1, name=hypervector_size)
+on stmt: graph_index = arg(2, name=graph_index)
+on stmt: node = arg(3, name=node)
+on stmt: symbol = arg(4, name=symbol)
+on stmt: X = arg(5, name=X)
+on stmt: $const8.2 = const(NoneType, None)
+on stmt: $const10.3 = const(NoneType, None)
+on stmt: $12build_slice.4 = global(slice: <class 'slice'>)
+on stmt: $12build_slice.5 = call $12build_slice.4($const8.2, $const10.3, func=$12build_slice.4, args=(Var($const8.2, graphs.py:124), Var($const10.3, graphs.py:124)), kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $14build_tuple.6 = build_tuple(items=[Var(symbol, graphs.py:121), Var($12build_slice.5, graphs.py:124)])
+on stmt: $16binary_subscr.7 = getitem(value=hypervectors, index=$14build_tuple.6, fn=<built-in function getitem>)
+on stmt: $20get_iter.8 = getiter(value=$16binary_subscr.7)
+on stmt: $phi22.0 = $20get_iter.8
+on stmt: jump 22
+==== SSA block analysis pass on 22
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e06f00>
+on stmt: $22for_iter.1 = iternext(value=$phi22.0)
+on stmt: $22for_iter.2 = pair_first(value=$22for_iter.1)
+on stmt: $22for_iter.3 = pair_second(value=$22for_iter.1)
+on stmt: $phi26.1 = $22for_iter.2
+on stmt: branch $22for_iter.3, 26, 168
+==== SSA block analysis pass on 26
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e06f00>
+on stmt: k = $phi26.1
+on stmt: $const30.3 = const(int, 32)
+on stmt: chunk = k // $const30.3
+on stmt: $const40.6 = const(int, 32)
+on stmt: pos = k % $const40.6
+on stmt: $binop_add54.11 = graph_index + node
+on stmt: $60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)])
+on stmt: $66binary_subscr.14 = getitem(value=X, index=$60build_tuple.13, fn=<built-in function getitem>)
+on stmt: $const70.15 = const(int, 1)
+on stmt: $binop_lshift74.17 = $const70.15 << pos
+on stmt: $binop_ior78.18 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$66binary_subscr.14, rhs=$binop_lshift74.17, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$60build_tuple.13] = $binop_ior78.18
+on stmt: $binop_add94.21 = k + hypervector_size
+on stmt: $const98.22 = const(int, 32)
+on stmt: chunk = $binop_add94.21 // $const98.22
+on stmt: $binop_add110.26 = k + hypervector_size
+on stmt: $const114.27 = const(int, 32)
+on stmt: pos = $binop_add110.26 % $const114.27
+on stmt: $binop_add128.32 = graph_index + node
+on stmt: $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk, graphs.py:125)])
+on stmt: $140binary_subscr.35 = getitem(value=X, index=$134build_tuple.34, fn=<built-in function getitem>)
+on stmt: $const144.36 = const(int, 1)
+on stmt: $binop_lshift148.38 = $const144.36 << pos
+on stmt: $152unary_invert.39 = unary(fn=<built-in function invert>, value=$binop_lshift148.38)
+on stmt: $binop_iand154.40 = inplace_binop(fn=<built-in function iand>, immutable_fn=<built-in function and_>, lhs=$140binary_subscr.35, rhs=$152unary_invert.39, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$134build_tuple.34] = $binop_iand154.40
+on stmt: jump 22
+==== SSA block analysis pass on 168
+Running <numba.core.ssa._GatherDefsHandler object at 0x771099e06f00>
+on stmt: $const170.2 = const(NoneType, None)
+on stmt: $170return_const.3 = cast(value=$const170.2)
+on stmt: return $170return_const.3
+defs defaultdict(<class 'list'>,
+            {'$12build_slice.4': [(<numba.core.ir.Assign object at 0x771099e05fa0>,
+                                   0)],
+             '$12build_slice.5': [(<numba.core.ir.Assign object at 0x771099e06090>,
+                                   0)],
+             '$134build_tuple.34': [(<numba.core.ir.Assign object at 0x771099c2d2e0>,
+                                     26)],
+             '$140binary_subscr.35': [(<numba.core.ir.Assign object at 0x771099c2d460>,
+                                       26)],
+             '$14build_tuple.6': [(<numba.core.ir.Assign object at 0x771099e061b0>,
+                                   0)],
+             '$152unary_invert.39': [(<numba.core.ir.Assign object at 0x771099c2d8e0>,
+                                      26)],
+             '$16binary_subscr.7': [(<numba.core.ir.Assign object at 0x771099e06300>,
+                                     0)],
+             '$170return_const.3': [(<numba.core.ir.Assign object at 0x771099e07830>,
+                                     168)],
+             '$20get_iter.8': [(<numba.core.ir.Assign object at 0x771099e06420>,
+                                0)],
+             '$22for_iter.1': [(<numba.core.ir.Assign object at 0x771099e06630>,
+                                22)],
+             '$22for_iter.2': [(<numba.core.ir.Assign object at 0x771099e06750>,
+                                22)],
+             '$22for_iter.3': [(<numba.core.ir.Assign object at 0x771099e06870>,
+                                22)],
+             '$60build_tuple.13': [(<numba.core.ir.Assign object at 0x771099e07980>,
+                                    26)],
+             '$66binary_subscr.14': [(<numba.core.ir.Assign object at 0x771099e07b00>,
+                                      26)],
+             '$binop_add110.26': [(<numba.core.ir.Assign object at 0x771099c2c9b0>,
+                                   26)],
+             '$binop_add128.32': [(<numba.core.ir.Assign object at 0x771099c2d0d0>,
+                                   26)],
+             '$binop_add54.11': [(<numba.core.ir.Assign object at 0x771099e07770>,
+                                  26)],
+             '$binop_add94.21': [(<numba.core.ir.Assign object at 0x771099c2c380>,
+                                  26)],
+             '$binop_iand154.40': [(<numba.core.ir.Assign object at 0x771099c2da60>,
+                                    26)],
+             '$binop_ior78.18': [(<numba.core.ir.Assign object at 0x771099e07fb0>,
+                                  26)],
+             '$binop_lshift148.38': [(<numba.core.ir.Assign object at 0x771099c2d7c0>,
+                                      26)],
+             '$binop_lshift74.17': [(<numba.core.ir.Assign object at 0x771099e07e60>,
+                                     26)],
+             '$const10.3': [(<numba.core.ir.Assign object at 0x771099e05e80>,
+                             0)],
+             '$const114.27': [(<numba.core.ir.Assign object at 0x771099c2caa0>,
+                               26)],
+             '$const144.36': [(<numba.core.ir.Assign object at 0x771099c2d550>,
+                               26)],
+             '$const170.2': [(<numba.core.ir.Assign object at 0x771099e07410>,
+                              168)],
+             '$const30.3': [(<numba.core.ir.Assign object at 0x771099e06cc0>,
+                             26)],
+             '$const40.6': [(<numba.core.ir.Assign object at 0x771099e070e0>,
+                             26)],
+             '$const70.15': [(<numba.core.ir.Assign object at 0x771099e07bf0>,
+                              26)],
+             '$const8.2': [(<numba.core.ir.Assign object at 0x771099e05d60>,
+                            0)],
+             '$const98.22': [(<numba.core.ir.Assign object at 0x771099c2c470>,
+                              26)],
+             '$phi22.0': [(<numba.core.ir.Assign object at 0x771099e05c40>, 0)],
+             '$phi26.1': [(<numba.core.ir.Assign object at 0x771099e06900>,
+                           22)],
+             'X': [(<numba.core.ir.Assign object at 0x771099e05a30>, 0)],
+             'chunk': [(<numba.core.ir.Assign object at 0x771099e06e10>, 26),
+                       (<numba.core.ir.Assign object at 0x771099c2c5f0>, 26)],
+             'graph_index': [(<numba.core.ir.Assign object at 0x771099e05760>,
+                              0)],
+             'hypervector_size': [(<numba.core.ir.Assign object at 0x771099e056d0>,
+                                   0)],
+             'hypervectors': [(<numba.core.ir.Assign object at 0x771099e05430>,
+                               0)],
+             'k': [(<numba.core.ir.Assign object at 0x771099e06ab0>, 26)],
+             'node': [(<numba.core.ir.Assign object at 0x771099e05850>, 0)],
+             'pos': [(<numba.core.ir.Assign object at 0x771099e07260>, 26),
+                     (<numba.core.ir.Assign object at 0x771099c2cc20>, 26)],
+             'symbol': [(<numba.core.ir.Assign object at 0x771099e05940>, 0)]})
+SSA violators <numba.core.utils.OrderedSet object at 0x77109a4e6ea0>
+Fix SSA violator on var chunk
+==== SSA block rewrite pass on 0
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e07d10>
+on stmt: hypervectors = arg(0, name=hypervectors)
+on stmt: hypervector_size = arg(1, name=hypervector_size)
+on stmt: graph_index = arg(2, name=graph_index)
+on stmt: node = arg(3, name=node)
+on stmt: symbol = arg(4, name=symbol)
+on stmt: X = arg(5, name=X)
+on stmt: $const8.2 = const(NoneType, None)
+on stmt: $const10.3 = const(NoneType, None)
+on stmt: $12build_slice.4 = global(slice: <class 'slice'>)
+on stmt: $12build_slice.5 = call $12build_slice.4($const8.2, $const10.3, func=$12build_slice.4, args=(Var($const8.2, graphs.py:124), Var($const10.3, graphs.py:124)), kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $14build_tuple.6 = build_tuple(items=[Var(symbol, graphs.py:121), Var($12build_slice.5, graphs.py:124)])
+on stmt: $16binary_subscr.7 = getitem(value=hypervectors, index=$14build_tuple.6, fn=<built-in function getitem>)
+on stmt: $20get_iter.8 = getiter(value=$16binary_subscr.7)
+on stmt: $phi22.0 = $20get_iter.8
+on stmt: jump 22
+==== SSA block rewrite pass on 22
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e07d10>
+on stmt: $22for_iter.1 = iternext(value=$phi22.0)
+on stmt: $22for_iter.2 = pair_first(value=$22for_iter.1)
+on stmt: $22for_iter.3 = pair_second(value=$22for_iter.1)
+on stmt: $phi26.1 = $22for_iter.2
+on stmt: branch $22for_iter.3, 26, 168
+==== SSA block rewrite pass on 26
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e07d10>
+on stmt: k = $phi26.1
+on stmt: $const30.3 = const(int, 32)
+on stmt: chunk = k // $const30.3
+first assign: chunk
+replaced with: chunk = k // $const30.3
+on stmt: $const40.6 = const(int, 32)
+on stmt: pos = k % $const40.6
+on stmt: $binop_add54.11 = graph_index + node
+on stmt: $60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)])
+on stmt: $66binary_subscr.14 = getitem(value=X, index=$60build_tuple.13, fn=<built-in function getitem>)
+on stmt: $const70.15 = const(int, 1)
+on stmt: $binop_lshift74.17 = $const70.15 << pos
+on stmt: $binop_ior78.18 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$66binary_subscr.14, rhs=$binop_lshift74.17, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$60build_tuple.13] = $binop_ior78.18
+on stmt: $binop_add94.21 = k + hypervector_size
+on stmt: $const98.22 = const(int, 32)
+on stmt: chunk = $binop_add94.21 // $const98.22
+replaced with: chunk.1 = $binop_add94.21 // $const98.22
+on stmt: $binop_add110.26 = k + hypervector_size
+on stmt: $const114.27 = const(int, 32)
+on stmt: pos = $binop_add110.26 % $const114.27
+on stmt: $binop_add128.32 = graph_index + node
+on stmt: $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk, graphs.py:125)])
+on stmt: $140binary_subscr.35 = getitem(value=X, index=$134build_tuple.34, fn=<built-in function getitem>)
+on stmt: $const144.36 = const(int, 1)
+on stmt: $binop_lshift148.38 = $const144.36 << pos
+on stmt: $152unary_invert.39 = unary(fn=<built-in function invert>, value=$binop_lshift148.38)
+on stmt: $binop_iand154.40 = inplace_binop(fn=<built-in function iand>, immutable_fn=<built-in function and_>, lhs=$140binary_subscr.35, rhs=$152unary_invert.39, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$134build_tuple.34] = $binop_iand154.40
+on stmt: jump 22
+==== SSA block rewrite pass on 168
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e07d10>
+on stmt: $const170.2 = const(NoneType, None)
+on stmt: $170return_const.3 = cast(value=$const170.2)
+on stmt: return $170return_const.3
+Replaced assignments: defaultdict(<class 'list'>,
+            {26: [<numba.core.ir.Assign object at 0x771099e05550>,
+                  <numba.core.ir.Assign object at 0x771099e05190>]})
+==== SSA block rewrite pass on 0
+Running <numba.core.ssa._FixSSAVars object at 0x771099e07d10>
+on stmt: hypervectors = arg(0, name=hypervectors)
+on stmt: hypervector_size = arg(1, name=hypervector_size)
+on stmt: graph_index = arg(2, name=graph_index)
+on stmt: node = arg(3, name=node)
+on stmt: symbol = arg(4, name=symbol)
+on stmt: X = arg(5, name=X)
+on stmt: $const8.2 = const(NoneType, None)
+on stmt: $const10.3 = const(NoneType, None)
+on stmt: $12build_slice.4 = global(slice: <class 'slice'>)
+on stmt: $12build_slice.5 = call $12build_slice.4($const8.2, $const10.3, func=$12build_slice.4, args=(Var($const8.2, graphs.py:124), Var($const10.3, graphs.py:124)), kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $14build_tuple.6 = build_tuple(items=[Var(symbol, graphs.py:121), Var($12build_slice.5, graphs.py:124)])
+on stmt: $16binary_subscr.7 = getitem(value=hypervectors, index=$14build_tuple.6, fn=<built-in function getitem>)
+on stmt: $20get_iter.8 = getiter(value=$16binary_subscr.7)
+on stmt: $phi22.0 = $20get_iter.8
+on stmt: jump 22
+==== SSA block rewrite pass on 22
+Running <numba.core.ssa._FixSSAVars object at 0x771099e07d10>
+on stmt: $22for_iter.1 = iternext(value=$phi22.0)
+on stmt: $22for_iter.2 = pair_first(value=$22for_iter.1)
+on stmt: $22for_iter.3 = pair_second(value=$22for_iter.1)
+on stmt: $phi26.1 = $22for_iter.2
+on stmt: branch $22for_iter.3, 26, 168
+==== SSA block rewrite pass on 26
+Running <numba.core.ssa._FixSSAVars object at 0x771099e07d10>
+on stmt: k = $phi26.1
+on stmt: $const30.3 = const(int, 32)
+on stmt: chunk = k // $const30.3
+on stmt: $const40.6 = const(int, 32)
+on stmt: pos = k % $const40.6
+on stmt: $binop_add54.11 = graph_index + node
+on stmt: $60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)])
+find_def var='chunk' stmt=$60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)])
+on stmt: $66binary_subscr.14 = getitem(value=X, index=$60build_tuple.13, fn=<built-in function getitem>)
+on stmt: $const70.15 = const(int, 1)
+on stmt: $binop_lshift74.17 = $const70.15 << pos
+on stmt: $binop_ior78.18 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$66binary_subscr.14, rhs=$binop_lshift74.17, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$60build_tuple.13] = $binop_ior78.18
+on stmt: $binop_add94.21 = k + hypervector_size
+on stmt: $const98.22 = const(int, 32)
+on stmt: chunk.1 = $binop_add94.21 // $const98.22
+on stmt: $binop_add110.26 = k + hypervector_size
+on stmt: $const114.27 = const(int, 32)
+on stmt: pos = $binop_add110.26 % $const114.27
+on stmt: $binop_add128.32 = graph_index + node
+on stmt: $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk, graphs.py:125)])
+find_def var='chunk' stmt=$134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk, graphs.py:125)])
+replaced with: $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk.1, graphs.py:130)])
+on stmt: $140binary_subscr.35 = getitem(value=X, index=$134build_tuple.34, fn=<built-in function getitem>)
+on stmt: $const144.36 = const(int, 1)
+on stmt: $binop_lshift148.38 = $const144.36 << pos
+on stmt: $152unary_invert.39 = unary(fn=<built-in function invert>, value=$binop_lshift148.38)
+on stmt: $binop_iand154.40 = inplace_binop(fn=<built-in function iand>, immutable_fn=<built-in function and_>, lhs=$140binary_subscr.35, rhs=$152unary_invert.39, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$134build_tuple.34] = $binop_iand154.40
+on stmt: jump 22
+==== SSA block rewrite pass on 168
+Running <numba.core.ssa._FixSSAVars object at 0x771099e07d10>
+on stmt: $const170.2 = const(NoneType, None)
+on stmt: $170return_const.3 = cast(value=$const170.2)
+on stmt: return $170return_const.3
+Fix SSA violator on var pos
+==== SSA block rewrite pass on 0
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e8d460>
+on stmt: hypervectors = arg(0, name=hypervectors)
+on stmt: hypervector_size = arg(1, name=hypervector_size)
+on stmt: graph_index = arg(2, name=graph_index)
+on stmt: node = arg(3, name=node)
+on stmt: symbol = arg(4, name=symbol)
+on stmt: X = arg(5, name=X)
+on stmt: $const8.2 = const(NoneType, None)
+on stmt: $const10.3 = const(NoneType, None)
+on stmt: $12build_slice.4 = global(slice: <class 'slice'>)
+on stmt: $12build_slice.5 = call $12build_slice.4($const8.2, $const10.3, func=$12build_slice.4, args=(Var($const8.2, graphs.py:124), Var($const10.3, graphs.py:124)), kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $14build_tuple.6 = build_tuple(items=[Var(symbol, graphs.py:121), Var($12build_slice.5, graphs.py:124)])
+on stmt: $16binary_subscr.7 = getitem(value=hypervectors, index=$14build_tuple.6, fn=<built-in function getitem>)
+on stmt: $20get_iter.8 = getiter(value=$16binary_subscr.7)
+on stmt: $phi22.0 = $20get_iter.8
+on stmt: jump 22
+==== SSA block rewrite pass on 22
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e8d460>
+on stmt: $22for_iter.1 = iternext(value=$phi22.0)
+on stmt: $22for_iter.2 = pair_first(value=$22for_iter.1)
+on stmt: $22for_iter.3 = pair_second(value=$22for_iter.1)
+on stmt: $phi26.1 = $22for_iter.2
+on stmt: branch $22for_iter.3, 26, 168
+==== SSA block rewrite pass on 26
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e8d460>
+on stmt: k = $phi26.1
+on stmt: $const30.3 = const(int, 32)
+on stmt: chunk = k // $const30.3
+on stmt: $const40.6 = const(int, 32)
+on stmt: pos = k % $const40.6
+first assign: pos
+replaced with: pos = k % $const40.6
+on stmt: $binop_add54.11 = graph_index + node
+on stmt: $60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)])
+on stmt: $66binary_subscr.14 = getitem(value=X, index=$60build_tuple.13, fn=<built-in function getitem>)
+on stmt: $const70.15 = const(int, 1)
+on stmt: $binop_lshift74.17 = $const70.15 << pos
+on stmt: $binop_ior78.18 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$66binary_subscr.14, rhs=$binop_lshift74.17, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$60build_tuple.13] = $binop_ior78.18
+on stmt: $binop_add94.21 = k + hypervector_size
+on stmt: $const98.22 = const(int, 32)
+on stmt: chunk.1 = $binop_add94.21 // $const98.22
+on stmt: $binop_add110.26 = k + hypervector_size
+on stmt: $const114.27 = const(int, 32)
+on stmt: pos = $binop_add110.26 % $const114.27
+replaced with: pos.1 = $binop_add110.26 % $const114.27
+on stmt: $binop_add128.32 = graph_index + node
+on stmt: $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk.1, graphs.py:130)])
+on stmt: $140binary_subscr.35 = getitem(value=X, index=$134build_tuple.34, fn=<built-in function getitem>)
+on stmt: $const144.36 = const(int, 1)
+on stmt: $binop_lshift148.38 = $const144.36 << pos
+on stmt: $152unary_invert.39 = unary(fn=<built-in function invert>, value=$binop_lshift148.38)
+on stmt: $binop_iand154.40 = inplace_binop(fn=<built-in function iand>, immutable_fn=<built-in function and_>, lhs=$140binary_subscr.35, rhs=$152unary_invert.39, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$134build_tuple.34] = $binop_iand154.40
+on stmt: jump 22
+==== SSA block rewrite pass on 168
+Running <numba.core.ssa._FreshVarHandler object at 0x771099e8d460>
+on stmt: $const170.2 = const(NoneType, None)
+on stmt: $170return_const.3 = cast(value=$const170.2)
+on stmt: return $170return_const.3
+Replaced assignments: defaultdict(<class 'list'>,
+            {26: [<numba.core.ir.Assign object at 0x771099e04e60>,
+                  <numba.core.ir.Assign object at 0x771099c2cf80>]})
+==== SSA block rewrite pass on 0
+Running <numba.core.ssa._FixSSAVars object at 0x771099de2de0>
+on stmt: hypervectors = arg(0, name=hypervectors)
+on stmt: hypervector_size = arg(1, name=hypervector_size)
+on stmt: graph_index = arg(2, name=graph_index)
+on stmt: node = arg(3, name=node)
+on stmt: symbol = arg(4, name=symbol)
+on stmt: X = arg(5, name=X)
+on stmt: $const8.2 = const(NoneType, None)
+on stmt: $const10.3 = const(NoneType, None)
+on stmt: $12build_slice.4 = global(slice: <class 'slice'>)
+on stmt: $12build_slice.5 = call $12build_slice.4($const8.2, $const10.3, func=$12build_slice.4, args=(Var($const8.2, graphs.py:124), Var($const10.3, graphs.py:124)), kws=(), vararg=None, varkwarg=None, target=None)
+on stmt: $14build_tuple.6 = build_tuple(items=[Var(symbol, graphs.py:121), Var($12build_slice.5, graphs.py:124)])
+on stmt: $16binary_subscr.7 = getitem(value=hypervectors, index=$14build_tuple.6, fn=<built-in function getitem>)
+on stmt: $20get_iter.8 = getiter(value=$16binary_subscr.7)
+on stmt: $phi22.0 = $20get_iter.8
+on stmt: jump 22
+==== SSA block rewrite pass on 22
+Running <numba.core.ssa._FixSSAVars object at 0x771099de2de0>
+on stmt: $22for_iter.1 = iternext(value=$phi22.0)
+on stmt: $22for_iter.2 = pair_first(value=$22for_iter.1)
+on stmt: $22for_iter.3 = pair_second(value=$22for_iter.1)
+on stmt: $phi26.1 = $22for_iter.2
+on stmt: branch $22for_iter.3, 26, 168
+==== SSA block rewrite pass on 26
+Running <numba.core.ssa._FixSSAVars object at 0x771099de2de0>
+on stmt: k = $phi26.1
+on stmt: $const30.3 = const(int, 32)
+on stmt: chunk = k // $const30.3
+on stmt: $const40.6 = const(int, 32)
+on stmt: pos = k % $const40.6
+on stmt: $binop_add54.11 = graph_index + node
+on stmt: $60build_tuple.13 = build_tuple(items=[Var($binop_add54.11, graphs.py:128), Var(chunk, graphs.py:125)])
+on stmt: $66binary_subscr.14 = getitem(value=X, index=$60build_tuple.13, fn=<built-in function getitem>)
+on stmt: $const70.15 = const(int, 1)
+on stmt: $binop_lshift74.17 = $const70.15 << pos
+find_def var='pos' stmt=$binop_lshift74.17 = $const70.15 << pos
+on stmt: $binop_ior78.18 = inplace_binop(fn=<built-in function ior>, immutable_fn=<built-in function or_>, lhs=$66binary_subscr.14, rhs=$binop_lshift74.17, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$60build_tuple.13] = $binop_ior78.18
+on stmt: $binop_add94.21 = k + hypervector_size
+on stmt: $const98.22 = const(int, 32)
+on stmt: chunk.1 = $binop_add94.21 // $const98.22
+on stmt: $binop_add110.26 = k + hypervector_size
+on stmt: $const114.27 = const(int, 32)
+on stmt: pos.1 = $binop_add110.26 % $const114.27
+on stmt: $binop_add128.32 = graph_index + node
+on stmt: $134build_tuple.34 = build_tuple(items=[Var($binop_add128.32, graphs.py:132), Var(chunk.1, graphs.py:130)])
+on stmt: $140binary_subscr.35 = getitem(value=X, index=$134build_tuple.34, fn=<built-in function getitem>)
+on stmt: $const144.36 = const(int, 1)
+on stmt: $binop_lshift148.38 = $const144.36 << pos
+find_def var='pos' stmt=$binop_lshift148.38 = $const144.36 << pos
+replaced with: $binop_lshift148.38 = $const144.36 << pos.1
+on stmt: $152unary_invert.39 = unary(fn=<built-in function invert>, value=$binop_lshift148.38)
+on stmt: $binop_iand154.40 = inplace_binop(fn=<built-in function iand>, immutable_fn=<built-in function and_>, lhs=$140binary_subscr.35, rhs=$152unary_invert.39, static_lhs=Undefined, static_rhs=Undefined)
+on stmt: X[$134build_tuple.34] = $binop_iand154.40
+on stmt: jump 22
+==== SSA block rewrite pass on 168
+Running <numba.core.ssa._FixSSAVars object at 0x771099de2de0>
+on stmt: $const170.2 = const(NoneType, None)
+on stmt: $170return_const.3 = cast(value=$const170.2)
+on stmt: return $170return_const.3
+Creating test data
+Epoch#1 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#2 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#3 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#4 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#5 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#6 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#7 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#8 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#9 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#10 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#11 -- Accuracy train: 0.4258888888888889 -- Accuracy test: 0.403 
+Epoch#12 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#13 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#14 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#15 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#16 -- Accuracy train: 0.5695555555555556 -- Accuracy test: 0.598 
+Epoch#17 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#18 -- Accuracy train: 0.6362222222222222 -- Accuracy test: 0.651 
+Epoch#19 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#20 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#21 -- Accuracy train: 0.6141111111111112 -- Accuracy test: 0.59 
+Epoch#22 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#23 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#24 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#25 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#26 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#27 -- Accuracy train: 0.5823333333333334 -- Accuracy test: 0.563 
+Epoch#28 -- Accuracy train: 0.5994444444444444 -- Accuracy test: 0.579 
+Epoch#29 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#30 -- Accuracy train: 0.5823333333333334 -- Accuracy test: 0.563 
+Epoch#31 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#32 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#33 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#34 -- Accuracy train: 0.6141111111111112 -- Accuracy test: 0.59 
+Epoch#35 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#36 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#37 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#38 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#39 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#40 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#41 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#42 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#43 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#44 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#45 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#46 -- Accuracy train: 0.6038888888888889 -- Accuracy test: 0.587 
+Epoch#47 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#48 -- Accuracy train: 0.5616666666666666 -- Accuracy test: 0.582 
+Epoch#49 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#50 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#51 -- Accuracy train: 0.6016666666666667 -- Accuracy test: 0.585 
+Epoch#52 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#53 -- Accuracy train: 0.5694444444444444 -- Accuracy test: 0.598 
+Epoch#54 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#55 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#56 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#57 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#58 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#59 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#60 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#61 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#62 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#63 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#64 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#65 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#66 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#67 -- Accuracy train: 0.4467777777777778 -- Accuracy test: 0.429 
+Epoch#68 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#69 -- Accuracy train: 0.5476666666666666 -- Accuracy test: 0.57 
+Epoch#70 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#71 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#72 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#73 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#74 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#75 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#76 -- Accuracy train: 0.468 -- Accuracy test: 0.441 
+Epoch#77 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#78 -- Accuracy train: 0.5687777777777778 -- Accuracy test: 0.59 
+Epoch#79 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#80 -- Accuracy train: 0.5454444444444444 -- Accuracy test: 0.545 
+Epoch#81 -- Accuracy train: 0.5218888888888888 -- Accuracy test: 0.5 
+Epoch#82 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#83 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#84 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#85 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#86 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#87 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#88 -- Accuracy train: 0.569 -- Accuracy test: 0.591 
+Epoch#89 -- Accuracy train: 0.5823333333333334 -- Accuracy test: 0.563 
+Epoch#90 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#91 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#92 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#93 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#94 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#95 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#96 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#97 -- Accuracy train: 0.4613333333333333 -- Accuracy test: 0.429 
+Epoch#98 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#99 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#100 -- Accuracy train: 0.5823333333333334 -- Accuracy test: 0.563 
+Epoch#101 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#102 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#103 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#104 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#105 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#106 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#107 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#108 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#109 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#110 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#111 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#112 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#113 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#114 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#115 -- Accuracy train: 0.5665555555555556 -- Accuracy test: 0.593 
+Epoch#116 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#117 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#118 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#119 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#120 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#121 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#122 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#123 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#124 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#125 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#126 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#127 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#128 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#129 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#130 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#131 -- Accuracy train: 0.5685555555555556 -- Accuracy test: 0.597 
+Epoch#132 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#133 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#134 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#135 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#136 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#137 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#138 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#139 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#140 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#141 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#142 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#143 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#144 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#145 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#146 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#147 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#148 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Epoch#149 -- Accuracy train: 0.4295555555555556 -- Accuracy test: 0.402 
+Epoch#150 -- Accuracy train: 0.5704444444444444 -- Accuracy test: 0.598 
+Time: 7212.210336446762
+Clause #0 W:(-8 0) 
+Number of literals: 0
+Clause #1 W:(-1 -16) 
+Number of literals: 0
+Clause #2 W:(7 -10) 
+Number of literals: 0
+Clause #3 W:(-15 -10) 
+Number of literals: 0
+Clause #4 W:(18 10) 
+Number of literals: 0
+Clause #5 W:(8 22) NOT x155
+Number of literals: 1
+Clause #6 W:(-14 -2) 
+Number of literals: 0
+Clause #7 W:(5 -3) 
+Number of literals: 0
+Clause #8 W:(4 6) 
+Number of literals: 0
+Clause #9 W:(-12 11) 
+Number of literals: 0
+Clause #10 W:(-1 1) NOT x176
+Number of literals: 1
+Clause #11 W:(-8 -2) 
+Number of literals: 0
+Clause #12 W:(-24 17) 
+Number of literals: 0
+Clause #13 W:(6 -9) NOT x255
+Number of literals: 1
+Clause #14 W:(5 -42) 
+Number of literals: 0
+Clause #15 W:(-6 0) 
+Number of literals: 0
+Clause #16 W:(-4 -15) 
+Number of literals: 0
+Clause #17 W:(9 -1) x3
+Number of literals: 1
+Clause #18 W:(-8 -4) 
+Number of literals: 0
+Clause #19 W:(9 9) 
+Number of literals: 0
+Clause #20 W:(-2 -6) NOT x44
+Number of literals: 1
+Clause #21 W:(-14 -1) 
+Number of literals: 0
+Clause #22 W:(1 6) NOT x76
+Number of literals: 1
+Clause #23 W:(-1 -1) 
+Number of literals: 0
+Clause #24 W:(-2 3) 
+Number of literals: 0
+Clause #25 W:(3 3) 
+Number of literals: 0
+Clause #26 W:(-18 -1) 
+Number of literals: 0
+Clause #27 W:(17 35) NOT x169
+Number of literals: 1
+Clause #28 W:(-9 -7) NOT x44
+Number of literals: 1
+Clause #29 W:(-1 -6) x31
+Number of literals: 1
+Clause #30 W:(-1 2) NOT x212
+Number of literals: 1
+Clause #31 W:(-7 -7) 
+Number of literals: 0
+Clause #32 W:(-16 -12) x50 AND NOT x109
+Number of literals: 2
+Clause #33 W:(4 -2) NOT x40
+Number of literals: 1
+Clause #34 W:(16 9) NOT x70 AND NOT x191
+Number of literals: 2
+Clause #35 W:(-12 -6) NOT x24
+Number of literals: 1
+Clause #36 W:(2 5) x31 AND NOT x31
+Number of literals: 2
+Clause #37 W:(-2 -6) 
+Number of literals: 0
+Clause #38 W:(-2 6) x31
+Number of literals: 1
+Clause #39 W:(9 -2) x7 AND x14
+Number of literals: 2
+Clause #40 W:(1 10) 
+Number of literals: 0
+Clause #41 W:(-7 -1) 
+Number of literals: 0
+Clause #42 W:(0 1) 
+Number of literals: 0
+Clause #43 W:(-24 -15) NOT x102
+Number of literals: 1
+Clause #44 W:(-11 -10) x11
+Number of literals: 1
+Clause #45 W:(14 -1) x5
+Number of literals: 1
+Clause #46 W:(-6 -1) x13 AND x20
+Number of literals: 2
+Clause #47 W:(-19 -1) x115
+Number of literals: 1
+Clause #48 W:(-24 28) 
+Number of literals: 0
+Clause #49 W:(-3 -6) 
+Number of literals: 0
+Clause #50 W:(-10 -23) x22
+Number of literals: 1
+Clause #51 W:(22 6) NOT x168
+Number of literals: 1
+Clause #52 W:(5 9) NOT x120 AND NOT x132
+Number of literals: 2
+Clause #53 W:(2 6) NOT x0 AND NOT x63 AND NOT x253
+Number of literals: 3
+Clause #54 W:(-16 7) 
+Number of literals: 0
+Clause #55 W:(-12 4) x50
+Number of literals: 1
+Clause #56 W:(-2 -3) 
+Number of literals: 0
+Clause #57 W:(26 -2) NOT x235
+Number of literals: 1
+Clause #58 W:(-10 -25) 
+Number of literals: 0
+Clause #59 W:(1 -3) 
+Number of literals: 0
+Clause #60 W:(26 -17) 
+Number of literals: 0
+Clause #61 W:(0 0) 
+Number of literals: 0
+Clause #62 W:(23 8) 
+Number of literals: 0
+Clause #63 W:(3 11) 
+Number of literals: 0
+Clause #64 W:(-1 -5) 
+Number of literals: 0
+Clause #65 W:(-2 1) NOT x45
+Number of literals: 1
+Clause #66 W:(-28 -10) NOT x47
+Number of literals: 1
+Clause #67 W:(7 1) NOT x208
+Number of literals: 1
+Clause #68 W:(8 6) 
+Number of literals: 0
+Clause #69 W:(-13 8) 
+Number of literals: 0
+Clause #70 W:(-1 7) NOT x226
+Number of literals: 1
+Clause #71 W:(-4 -15) 
+Number of literals: 0
+Clause #72 W:(38 15) NOT x15 AND NOT x36
+Number of literals: 2
+Clause #73 W:(6 3) NOT x15
+Number of literals: 1
+Clause #74 W:(7 6) 
+Number of literals: 0
+Clause #75 W:(-3 -12) NOT x2
+Number of literals: 1
+Clause #76 W:(5 -19) 
+Number of literals: 0
+Clause #77 W:(1 4) NOT x153
+Number of literals: 1
+Clause #78 W:(-17 -2) NOT x211 AND NOT x217
+Number of literals: 2
+Clause #79 W:(-2 1) 
+Number of literals: 0
+Clause #80 W:(-10 5) x4 AND NOT x152
+Number of literals: 2
+Clause #81 W:(-6 -7) NOT x102 AND NOT x112 AND NOT x144
+Number of literals: 3
+Clause #82 W:(0 -1) x10 AND NOT x243
+Number of literals: 2
+Clause #83 W:(8 6) NOT x247
+Number of literals: 1
+Clause #84 W:(2 1) x8
+Number of literals: 1
+Clause #85 W:(17 -18) NOT x62
+Number of literals: 1
+Clause #86 W:(-11 1) NOT x38
+Number of literals: 1
+Clause #87 W:(5 -14) NOT x117
+Number of literals: 1
+Clause #88 W:(3 17) NOT x144
+Number of literals: 1
+Clause #89 W:(-9 -2) NOT x70 AND NOT x78
+Number of literals: 2
+Clause #90 W:(19 7) NOT x166
+Number of literals: 1
+Clause #91 W:(-3 -3) NOT x93
+Number of literals: 1
+Clause #92 W:(0 -1) x18
+Number of literals: 1
+Clause #93 W:(7 -3) 
+Number of literals: 0
+Clause #94 W:(2 10) 
+Number of literals: 0
+Clause #95 W:(-11 -5) 
+Number of literals: 0
+Clause #96 W:(-3 0) 
+Number of literals: 0
+Clause #97 W:(-11 15) 
+Number of literals: 0
+Clause #98 W:(-3 0) x30
+Number of literals: 1
+Clause #99 W:(4 4) 
+Number of literals: 0
+Clause #100 W:(-21 -12) NOT x130 AND NOT x231
+Number of literals: 2
+Clause #101 W:(-6 -24) 
+Number of literals: 0
+Clause #102 W:(-1 6) 
+Number of literals: 0
+Clause #103 W:(-1 -13) 
+Number of literals: 0
+Clause #104 W:(-19 2) NOT x6 AND NOT x170
+Number of literals: 2
+Clause #105 W:(4 2) 
+Number of literals: 0
+Clause #106 W:(3 -5) 
+Number of literals: 0
+Clause #107 W:(5 7) 
+Number of literals: 0
+Clause #108 W:(1 21) 
+Number of literals: 0
+Clause #109 W:(-3 -4) x63
+Number of literals: 1
+Clause #110 W:(-4 -2) NOT x70
+Number of literals: 1
+Clause #111 W:(-23 -6) 
+Number of literals: 0
+Clause #112 W:(-1 -8) 
+Number of literals: 0
+Clause #113 W:(-10 -21) 
+Number of literals: 0
+Clause #114 W:(-2 -5) 
+Number of literals: 0
+Clause #115 W:(-2 -6) 
+Number of literals: 0
+Clause #116 W:(-4 -3) NOT x47 AND NOT x175
+Number of literals: 2
+Clause #117 W:(7 15) 
+Number of literals: 0
+Clause #118 W:(-4 2) NOT x58
+Number of literals: 1
+Clause #119 W:(-1 3) NOT x125
+Number of literals: 1
+Clause #120 W:(-12 -4) NOT x156
+Number of literals: 1
+Clause #121 W:(-15 -1) 
+Number of literals: 0
+Clause #122 W:(-38 -21) NOT x219
+Number of literals: 1
+Clause #123 W:(-7 -2) 
+Number of literals: 0
+Clause #124 W:(-14 -31) NOT x228
+Number of literals: 1
+Clause #125 W:(-10 -5) 
+Number of literals: 0
+Clause #126 W:(1 -18) 
+Number of literals: 0
+Clause #127 W:(-8 -12) 
+Number of literals: 0
+Clause #128 W:(-1 -2) 
+Number of literals: 0
+Clause #129 W:(5 -9) NOT x38
+Number of literals: 1
+Clause #130 W:(1 -7) NOT x53
+Number of literals: 1
+Clause #131 W:(-9 -17) NOT x166
+Number of literals: 1
+Clause #132 W:(4 -1) 
+Number of literals: 0
+Clause #133 W:(2 -13) 
+Number of literals: 0
+Clause #134 W:(0 9) 
+Number of literals: 0
+Clause #135 W:(13 5) 
+Number of literals: 0
+Clause #136 W:(19 9) 
+Number of literals: 0
+Clause #137 W:(4 2) NOT x123
+Number of literals: 1
+Clause #138 W:(18 9) 
+Number of literals: 0
+Clause #139 W:(11 -1) 
+Number of literals: 0
+Clause #140 W:(4 1) 
+Number of literals: 0
+Clause #141 W:(-1 1) 
+Number of literals: 0
+Clause #142 W:(-8 -1) 
+Number of literals: 0
+Clause #143 W:(10 10) 
+Number of literals: 0
+Clause #144 W:(11 21) 
+Number of literals: 0
+Clause #145 W:(-5 -1) 
+Number of literals: 0
+Clause #146 W:(7 4) NOT x33
+Number of literals: 1
+Clause #147 W:(4 -15) 
+Number of literals: 0
+Clause #148 W:(4 13) NOT x39
+Number of literals: 1
+Clause #149 W:(-19 8) 
+Number of literals: 0
+Clause #150 W:(7 -3) 
+Number of literals: 0
+Clause #151 W:(3 17) 
+Number of literals: 0
+Clause #152 W:(-15 9) NOT x101 AND NOT x169 AND NOT x183
+Number of literals: 3
+Clause #153 W:(-5 -15) NOT x76
+Number of literals: 1
+Clause #154 W:(6 5) 
+Number of literals: 0
+Clause #155 W:(6 9) 
+Number of literals: 0
+Clause #156 W:(-2 -1) NOT x16
+Number of literals: 1
+Clause #157 W:(-1 3) 
+Number of literals: 0
+Clause #158 W:(4 0) NOT x197
+Number of literals: 1
+Clause #159 W:(-4 13) 
+Number of literals: 0
+Clause #160 W:(3 3) NOT x197
+Number of literals: 1
+Clause #161 W:(2 -3) 
+Number of literals: 0
+Clause #162 W:(8 2) 
+Number of literals: 0
+Clause #163 W:(-21 -8) 
+Number of literals: 0
+Clause #164 W:(0 21) 
+Number of literals: 0
+Clause #165 W:(-5 -7) 
+Number of literals: 0
+Clause #166 W:(-6 -12) 
+Number of literals: 0
+Clause #167 W:(13 11) 
+Number of literals: 0
+Clause #168 W:(7 5) 
+Number of literals: 0
+Clause #169 W:(19 -10) 
+Number of literals: 0
+Clause #170 W:(2 0) 
+Number of literals: 0
+Clause #171 W:(17 4) 
+Number of literals: 0
+Clause #172 W:(-7 0) NOT x192
+Number of literals: 1
+Clause #173 W:(0 28) 
+Number of literals: 0
+Clause #174 W:(-4 -2) 
+Number of literals: 0
+Clause #175 W:(-2 -16) NOT x10 AND NOT x209
+Number of literals: 2
+Clause #176 W:(14 8) NOT x141 AND NOT x224
+Number of literals: 2
+Clause #177 W:(-11 -26) 
+Number of literals: 0
+Clause #178 W:(-7 -15) NOT x26 AND NOT x230
+Number of literals: 2
+Clause #179 W:(-1 1) x13
+Number of literals: 1
+Clause #180 W:(-6 -6) 
+Number of literals: 0
+Clause #181 W:(4 -14) 
+Number of literals: 0
+Clause #182 W:(0 -4) x31
+Number of literals: 1
+Clause #183 W:(11 -10) NOT x128
+Number of literals: 1
+Clause #184 W:(-4 -15) 
+Number of literals: 0
+Clause #185 W:(1 0) 
+Number of literals: 0
+Clause #186 W:(-5 10) 
+Number of literals: 0
+Clause #187 W:(17 3) NOT x47
+Number of literals: 1
+Clause #188 W:(-4 3) 
+Number of literals: 0
+Clause #189 W:(11 3) NOT x224
+Number of literals: 1
+Clause #190 W:(5 13) 
+Number of literals: 0
+Clause #191 W:(-7 1) 
+Number of literals: 0
+Clause #192 W:(-9 10) 
+Number of literals: 0
+Clause #193 W:(3 10) 
+Number of literals: 0
+Clause #194 W:(15 18) 
+Number of literals: 0
+Clause #195 W:(7 -11) 
+Number of literals: 0
+Clause #196 W:(8 -2) 
+Number of literals: 0
+Clause #197 W:(2 -5) NOT x247
+Number of literals: 1
+Clause #198 W:(1 -10) 
+Number of literals: 0
+Clause #199 W:(-11 -21) NOT x112
+Number of literals: 1
+Clause #200 W:(2 23) 
+Number of literals: 0
+Clause #201 W:(5 -8) 
+Number of literals: 0
+Clause #202 W:(6 -10) 
+Number of literals: 0
+Clause #203 W:(-8 -7) 
+Number of literals: 0
+Clause #204 W:(12 -37) NOT x244
+Number of literals: 1
+Clause #205 W:(-5 2) 
+Number of literals: 0
+Clause #206 W:(8 0) 
+Number of literals: 0
+Clause #207 W:(-2 6) 
+Number of literals: 0
+Clause #208 W:(-6 -8) NOT x213
+Number of literals: 1
+Clause #209 W:(-2 -2) 
+Number of literals: 0
+Clause #210 W:(-1 1) 
+Number of literals: 0
+Clause #211 W:(4 -1) 
+Number of literals: 0
+Clause #212 W:(3 12) NOT x222 AND NOT x254
+Number of literals: 2
+Clause #213 W:(8 33) 
+Number of literals: 0
+Clause #214 W:(-3 -3) 
+Number of literals: 0
+Clause #215 W:(29 10) 
+Number of literals: 0
+Clause #216 W:(0 4) 
+Number of literals: 0
+Clause #217 W:(-9 -1) 
+Number of literals: 0
+Clause #218 W:(13 0) 
+Number of literals: 0
+Clause #219 W:(10 8) NOT x57 AND NOT x177
+Number of literals: 2
+Clause #220 W:(1 12) 
+Number of literals: 0
+Clause #221 W:(4 1) NOT x27
+Number of literals: 1
+Clause #222 W:(4 0) 
+Number of literals: 0
+Clause #223 W:(6 3) NOT x209
+Number of literals: 1
+Clause #224 W:(1 -1) 
+Number of literals: 0
+Clause #225 W:(-5 -4) 
+Number of literals: 0
+Clause #226 W:(-2 1) NOT x139
+Number of literals: 1
+Clause #227 W:(0 -12) NOT x58
+Number of literals: 1
+Clause #228 W:(7 21) NOT x92
+Number of literals: 1
+Clause #229 W:(-3 -1) 
+Number of literals: 0
+Clause #230 W:(-3 0) NOT x230
+Number of literals: 1
+Clause #231 W:(15 23) 
+Number of literals: 0
+Clause #232 W:(-19 2) 
+Number of literals: 0
+Clause #233 W:(1 3) 
+Number of literals: 0
+Clause #234 W:(-10 -4) NOT x2
+Number of literals: 1
+Clause #235 W:(-3 4) 
+Number of literals: 0
+Clause #236 W:(3 19) 
+Number of literals: 0
+Clause #237 W:(-17 -5) 
+Number of literals: 0
+Clause #238 W:(3 -2) 
+Number of literals: 0
+Clause #239 W:(-27 12) 
+Number of literals: 0
+Clause #240 W:(0 7) 
+Number of literals: 0
+Clause #241 W:(-1 -1) 
+Number of literals: 0
+Clause #242 W:(8 -1) 
+Number of literals: 0
+Clause #243 W:(-8 4) 
+Number of literals: 0
+Clause #244 W:(7 20) 
+Number of literals: 0
+Clause #245 W:(-1 -8) 
+Number of literals: 0
+Clause #246 W:(8 -11) 
+Number of literals: 0
+Clause #247 W:(7 -3) 
+Number of literals: 0
+Clause #248 W:(19 5) NOT x193 AND NOT x231
+Number of literals: 2
+Clause #249 W:(-4 0) 
+Number of literals: 0
+Clause #250 W:(0 11) NOT x133 AND NOT x154
+Number of literals: 2
+Clause #251 W:(-6 -6) NOT x139
+Number of literals: 1
+Clause #252 W:(20 13) 
+Number of literals: 0
+Clause #253 W:(-3 2) NOT x62
+Number of literals: 1
+Clause #254 W:(14 -25) NOT x105
+Number of literals: 1
+Clause #255 W:(9 9) NOT x159
+Number of literals: 1
+Clause #256 W:(-7 -5) 
+Number of literals: 0
+Clause #257 W:(-5 2) 
+Number of literals: 0
+Clause #258 W:(2 13) 
+Number of literals: 0
+Clause #259 W:(12 -9) NOT x96
+Number of literals: 1
+Clause #260 W:(21 -1) 
+Number of literals: 0
+Clause #261 W:(-9 -6) 
+Number of literals: 0
+Clause #262 W:(-6 4) NOT x109
+Number of literals: 1
+Clause #263 W:(16 7) NOT x161
+Number of literals: 1
+Clause #264 W:(-1 0) 
+Number of literals: 0
+Clause #265 W:(0 2) 
+Number of literals: 0
+Clause #266 W:(-2 7) 
+Number of literals: 0
+Clause #267 W:(-20 -3) NOT x66
+Number of literals: 1
+Clause #268 W:(4 -7) 
+Number of literals: 0
+Clause #269 W:(3 18) 
+Number of literals: 0
+Clause #270 W:(20 -3) NOT x109
+Number of literals: 1
+Clause #271 W:(-23 19) NOT x158
+Number of literals: 1
+Clause #272 W:(-7 -4) 
+Number of literals: 0
+Clause #273 W:(-8 -6) 
+Number of literals: 0
+Clause #274 W:(16 -3) 
+Number of literals: 0
+Clause #275 W:(-18 -32) NOT x41 AND NOT x46
+Number of literals: 2
+Clause #276 W:(22 -16) NOT x54
+Number of literals: 1
+Clause #277 W:(2 4) 
+Number of literals: 0
+Clause #278 W:(-2 4) 
+Number of literals: 0
+Clause #279 W:(-7 -5) 
+Number of literals: 0
+Clause #280 W:(2 2) NOT x136
+Number of literals: 1
+Clause #281 W:(-1 -7) 
+Number of literals: 0
+Clause #282 W:(7 -1) 
+Number of literals: 0
+Clause #283 W:(1 21) 
+Number of literals: 0
+Clause #284 W:(1 -1) 
+Number of literals: 0
+Clause #285 W:(-37 -44) NOT x170
+Number of literals: 1
+Clause #286 W:(0 4) NOT x110 AND NOT x125
+Number of literals: 2
+Clause #287 W:(-12 -1) NOT x134
+Number of literals: 1
+Clause #288 W:(0 0) NOT x108
+Number of literals: 1
+Clause #289 W:(3 -7) NOT x69
+Number of literals: 1
+Clause #290 W:(5 4) NOT x94
+Number of literals: 1
+Clause #291 W:(11 -1) x180 AND NOT x63
+Number of literals: 2
+Clause #292 W:(19 7) 
+Number of literals: 0
+Clause #293 W:(-17 -6) 
+Number of literals: 0
+Clause #294 W:(2 -9) NOT x37
+Number of literals: 1
+Clause #295 W:(6 10) NOT x147 AND NOT x238
+Number of literals: 2
+Clause #296 W:(10 9) NOT x139
+Number of literals: 1
+Clause #297 W:(16 -1) NOT x245
+Number of literals: 1
+Clause #298 W:(17 12) NOT x15 AND NOT x59 AND NOT x213
+Number of literals: 3
+Clause #299 W:(18 10) NOT x119
+Number of literals: 1
+Clause #300 W:(-13 0) 
+Number of literals: 0
+Clause #301 W:(-13 8) NOT x196
+Number of literals: 1
+Clause #302 W:(4 -3) 
+Number of literals: 0
+Clause #303 W:(-7 -2) 
+Number of literals: 0
+Clause #304 W:(11 21) NOT x170
+Number of literals: 1
+Clause #305 W:(5 3) 
+Number of literals: 0
+Clause #306 W:(-6 1) 
+Number of literals: 0
+Clause #307 W:(19 1) 
+Number of literals: 0
+Clause #308 W:(1 2) 
+Number of literals: 0
+Clause #309 W:(8 -9) 
+Number of literals: 0
+Clause #310 W:(6 7) 
+Number of literals: 0
+Clause #311 W:(0 -2) NOT x238
+Number of literals: 1
+Clause #312 W:(0 -9) 
+Number of literals: 0
+Clause #313 W:(-1 -1) 
+Number of literals: 0
+Clause #314 W:(-2 6) NOT x104
+Number of literals: 1
+Clause #315 W:(1 18) 
+Number of literals: 0
+Clause #316 W:(-6 14) NOT x150
+Number of literals: 1
+Clause #317 W:(-7 23) 
+Number of literals: 0
+Clause #318 W:(-3 -22) NOT x52 AND NOT x78
+Number of literals: 2
+Clause #319 W:(17 7) 
+Number of literals: 0
+Clause #320 W:(1 6) 
+Number of literals: 0
+Clause #321 W:(4 -1) NOT x117
+Number of literals: 1
+Clause #322 W:(16 5) 
+Number of literals: 0
+Clause #323 W:(16 18) NOT x88
+Number of literals: 1
+Clause #324 W:(8 1) 
+Number of literals: 0
+Clause #325 W:(-1 3) 
+Number of literals: 0
+Clause #326 W:(-6 6) 
+Number of literals: 0
+Clause #327 W:(-10 9) 
+Number of literals: 0
+Clause #328 W:(-12 -1) 
+Number of literals: 0
+Clause #329 W:(-7 17) 
+Number of literals: 0
+Clause #330 W:(3 -11) 
+Number of literals: 0
+Clause #331 W:(-12 -7) 
+Number of literals: 0
+Clause #332 W:(-19 -5) NOT x228
+Number of literals: 1
+Clause #333 W:(-11 -6) NOT x155
+Number of literals: 1
+Clause #334 W:(0 0) x80
+Number of literals: 1
+Clause #335 W:(6 1) 
+Number of literals: 0
+Clause #336 W:(-5 15) 
+Number of literals: 0
+Clause #337 W:(-1 -8) 
+Number of literals: 0
+Clause #338 W:(-3 0) 
+Number of literals: 0
+Clause #339 W:(6 2) NOT x139
+Number of literals: 1
+Clause #340 W:(18 26) 
+Number of literals: 0
+Clause #341 W:(-2 5) 
+Number of literals: 0
+Clause #342 W:(-2 -1) 
+Number of literals: 0
+Clause #343 W:(-1 -4) 
+Number of literals: 0
+Clause #344 W:(12 7) 
+Number of literals: 0
+Clause #345 W:(0 22) NOT x8
+Number of literals: 1
+Clause #346 W:(-23 -9) 
+Number of literals: 0
+Clause #347 W:(1 -11) NOT x219
+Number of literals: 1
+Clause #348 W:(-10 0) NOT x157
+Number of literals: 1
+Clause #349 W:(8 -9) 
+Number of literals: 0
+Clause #350 W:(-3 -3) 
+Number of literals: 0
+Clause #351 W:(-12 4) 
+Number of literals: 0
+Clause #352 W:(23 9) NOT x203
+Number of literals: 1
+Clause #353 W:(24 5) 
+Number of literals: 0
+Clause #354 W:(-11 8) NOT x157
+Number of literals: 1
+Clause #355 W:(-2 6) NOT x27
+Number of literals: 1
+Clause #356 W:(-1 1) 
+Number of literals: 0
+Clause #357 W:(-3 -24) 
+Number of literals: 0
+Clause #358 W:(-2 -5) 
+Number of literals: 0
+Clause #359 W:(-1 0) 
+Number of literals: 0
+Clause #360 W:(-4 -11) 
+Number of literals: 0
+Clause #361 W:(7 1) NOT x36
+Number of literals: 1
+Clause #362 W:(3 -1) NOT x51
+Number of literals: 1
+Clause #363 W:(-6 -4) 
+Number of literals: 0
+Clause #364 W:(-17 12) NOT x171 AND NOT x196
+Number of literals: 2
+Clause #365 W:(-8 -16) NOT x247
+Number of literals: 1
+Clause #366 W:(-3 -15) NOT x127
+Number of literals: 1
+Clause #367 W:(10 -11) 
+Number of literals: 0
+Clause #368 W:(-12 -1) 
+Number of literals: 0
+Clause #369 W:(-5 0) NOT x166
+Number of literals: 1
+Clause #370 W:(5 -5) 
+Number of literals: 0
+Clause #371 W:(-12 -1) NOT x199 AND NOT x219
+Number of literals: 2
+Clause #372 W:(-3 -8) NOT x119
+Number of literals: 1
+Clause #373 W:(0 -14) NOT x136 AND NOT x194
+Number of literals: 2
+Clause #374 W:(-33 -1) 
+Number of literals: 0
+Clause #375 W:(3 10) 
+Number of literals: 0
+Clause #376 W:(-8 -9) NOT x13
+Number of literals: 1
+Clause #377 W:(14 -9) 
+Number of literals: 0
+Clause #378 W:(-4 -8) 
+Number of literals: 0
+Clause #379 W:(4 -9) 
+Number of literals: 0
+Clause #380 W:(0 -10) NOT x114
+Number of literals: 1
+Clause #381 W:(-3 -10) NOT x142
+Number of literals: 1
+Clause #382 W:(-16 -2) 
+Number of literals: 0
+Clause #383 W:(12 -7) 
+Number of literals: 0
+Clause #384 W:(0 -4) 
+Number of literals: 0
+Clause #385 W:(-3 3) 
+Number of literals: 0
+Clause #386 W:(0 0) 
+Number of literals: 0
+Clause #387 W:(-18 1) NOT x141 AND NOT x171
+Number of literals: 2
+Clause #388 W:(0 -2) 
+Number of literals: 0
+Clause #389 W:(4 -1) NOT x205
+Number of literals: 1
+Clause #390 W:(3 0) 
+Number of literals: 0
+Clause #391 W:(12 2) NOT x206
+Number of literals: 1
+Clause #392 W:(1 8) 
+Number of literals: 0
+Clause #393 W:(10 7) 
+Number of literals: 0
+Clause #394 W:(-18 -9) 
+Number of literals: 0
+Clause #395 W:(1 -1) 
+Number of literals: 0
+Clause #396 W:(25 -18) NOT x34
+Number of literals: 1
+Clause #397 W:(-1 1) NOT x224
+Number of literals: 1
+Clause #398 W:(1 -7) 
+Number of literals: 0
+Clause #399 W:(-12 -8) 
+Number of literals: 0
+Clause #400 W:(1 -2) 
+Number of literals: 0
+Clause #401 W:(-17 0) 
+Number of literals: 0
+Clause #402 W:(19 0) 
+Number of literals: 0
+Clause #403 W:(13 24) 
+Number of literals: 0
+Clause #404 W:(-20 10) 
+Number of literals: 0
+Clause #405 W:(5 28) 
+Number of literals: 0
+Clause #406 W:(5 4) 
+Number of literals: 0
+Clause #407 W:(30 2) 
+Number of literals: 0
+Clause #408 W:(-7 -11) 
+Number of literals: 0
+Clause #409 W:(-1 9) 
+Number of literals: 0
+Clause #410 W:(-11 0) 
+Number of literals: 0
+Clause #411 W:(2 14) 
+Number of literals: 0
+Clause #412 W:(2 -8) 
+Number of literals: 0
+Clause #413 W:(-12 -20) 
+Number of literals: 0
+Clause #414 W:(2 -25) NOT x113
+Number of literals: 1
+Clause #415 W:(-3 0) 
+Number of literals: 0
+Clause #416 W:(31 5) 
+Number of literals: 0
+Clause #417 W:(3 0) 
+Number of literals: 0
+Clause #418 W:(-4 5) NOT x8
+Number of literals: 1
+Clause #419 W:(-7 0) 
+Number of literals: 0
+Clause #420 W:(-10 3) 
+Number of literals: 0
+Clause #421 W:(2 12) 
+Number of literals: 0
+Clause #422 W:(-9 -9) 
+Number of literals: 0
+Clause #423 W:(-2 1) 
+Number of literals: 0
+Clause #424 W:(2 -2) NOT x236
+Number of literals: 1
+Clause #425 W:(-13 -5) NOT x4
+Number of literals: 1
+Clause #426 W:(4 4) NOT x197
+Number of literals: 1
+Clause #427 W:(38 7) 
+Number of literals: 0
+Clause #428 W:(-1 5) 
+Number of literals: 0
+Clause #429 W:(-7 -5) 
+Number of literals: 0
+Clause #430 W:(0 -8) 
+Number of literals: 0
+Clause #431 W:(-4 -10) NOT x49
+Number of literals: 1
+Clause #432 W:(14 8) NOT x3 AND NOT x84
+Number of literals: 2
+Clause #433 W:(-11 -3) NOT x125
+Number of literals: 1
+Clause #434 W:(3 -8) NOT x187
+Number of literals: 1
+Clause #435 W:(29 -33) 
+Number of literals: 0
+Clause #436 W:(-2 -8) 
+Number of literals: 0
+Clause #437 W:(4 9) 
+Number of literals: 0
+Clause #438 W:(14 17) 
+Number of literals: 0
+Clause #439 W:(3 3) NOT x246
+Number of literals: 1
+Clause #440 W:(-10 -2) NOT x64
+Number of literals: 1
+Clause #441 W:(-11 -3) 
+Number of literals: 0
+Clause #442 W:(3 2) 
+Number of literals: 0
+Clause #443 W:(0 -5) 
+Number of literals: 0
+Clause #444 W:(-8 -8) 
+Number of literals: 0
+Clause #445 W:(-4 -9) 
+Number of literals: 0
+Clause #446 W:(1 3) 
+Number of literals: 0
+Clause #447 W:(4 -2) 
+Number of literals: 0
+Clause #448 W:(-1 4) 
+Number of literals: 0
+Clause #449 W:(-3 -2) NOT x185
+Number of literals: 1
+Clause #450 W:(-23 1) NOT x148 AND NOT x216
+Number of literals: 2
+Clause #451 W:(-7 11) 
+Number of literals: 0
+Clause #452 W:(-7 -7) 
+Number of literals: 0
+Clause #453 W:(8 3) NOT x54
+Number of literals: 1
+Clause #454 W:(14 27) 
+Number of literals: 0
+Clause #455 W:(20 8) 
+Number of literals: 0
+Clause #456 W:(-9 -3) NOT x204
+Number of literals: 1
+Clause #457 W:(0 -4) 
+Number of literals: 0
+Clause #458 W:(9 -11) 
+Number of literals: 0
+Clause #459 W:(-6 -8) 
+Number of literals: 0
+Clause #460 W:(1 2) NOT x1
+Number of literals: 1
+Clause #461 W:(0 0) 
+Number of literals: 0
+Clause #462 W:(-1 1) 
+Number of literals: 0
+Clause #463 W:(28 -1) NOT x37
+Number of literals: 1
+Clause #464 W:(0 -6) NOT x111
+Number of literals: 1
+Clause #465 W:(6 12) NOT x75
+Number of literals: 1
+Clause #466 W:(-16 -5) 
+Number of literals: 0
+Clause #467 W:(5 12) 
+Number of literals: 0
+Clause #468 W:(-6 -5) 
+Number of literals: 0
+Clause #469 W:(22 17) NOT x131 AND NOT x208
+Number of literals: 2
+Clause #470 W:(9 -3) NOT x139 AND NOT x198
+Number of literals: 2
+Clause #471 W:(-18 -16) 
+Number of literals: 0
+Clause #472 W:(-10 -1) 
+Number of literals: 0
+Clause #473 W:(8 0) 
+Number of literals: 0
+Clause #474 W:(1 -10) NOT x235
+Number of literals: 1
+Clause #475 W:(12 -1) 
+Number of literals: 0
+Clause #476 W:(-3 -18) NOT x62
+Number of literals: 1
+Clause #477 W:(7 9) NOT x43
+Number of literals: 1
+Clause #478 W:(27 -5) NOT x137 AND NOT x253
+Number of literals: 2
+Clause #479 W:(-24 3) NOT x76 AND NOT x118
+Number of literals: 2
+Clause #480 W:(-3 -1) 
+Number of literals: 0
+Clause #481 W:(12 9) 
+Number of literals: 0
+Clause #482 W:(0 2) 
+Number of literals: 0
+Clause #483 W:(-1 -16) 
+Number of literals: 0
+Clause #484 W:(-17 -3) 
+Number of literals: 0
+Clause #485 W:(3 -1) 
+Number of literals: 0
+Clause #486 W:(-6 0) 
+Number of literals: 0
+Clause #487 W:(-22 10) 
+Number of literals: 0
+Clause #488 W:(-19 10) NOT x50
+Number of literals: 1
+Clause #489 W:(13 9) 
+Number of literals: 0
+Clause #490 W:(-33 0) 
+Number of literals: 0
+Clause #491 W:(-3 0) 
+Number of literals: 0
+Clause #492 W:(-27 2) NOT x100
+Number of literals: 1
+Clause #493 W:(-6 -2) 
+Number of literals: 0
+Clause #494 W:(2 -14) 
+Number of literals: 0
+Clause #495 W:(2 8) NOT x206
+Number of literals: 1
+Clause #496 W:(7 28) 
+Number of literals: 0
+Clause #497 W:(10 -4) 
+Number of literals: 0
+Clause #498 W:(20 -9) 
+Number of literals: 0
+Clause #499 W:(-3 -3) 
+Number of literals: 0
+results: Results(training_time_s=7212.210336446762, inference_time_s=0.7622518539428711, memory_usage_mb=435.51953125, accuracy=0.598, precision=0.357604, recall=0.598, f1_score=0.44756445556946184)
+confusion matrix: [[0, 402], [0, 598]]
+reporting runs/2024-12-17T20:13:07/results.toml
+reporting runs/2024-12-17T20:13:07/confusion_matrix.csv
+reporting runs/2024-12-17T20:13:07/weights.csv
