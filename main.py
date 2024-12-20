@@ -65,41 +65,29 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
 
     symbol_names = ["O", "X", " "]
 
-    # Create a list with node pairs for the edges
     edges = []
     for i in range(board_size):
         for j in range(1, board_size):
-            # Connect rows
             edges.append(((i, j-1), (i, j)))
-            # Connect columns
             edges.append(((j-1, i), (j, i)))
-            # Connect "back-columns"
             if i < board_size - 1:
                 edges.append(((i, j), (i+1, j-1)))
 
 
-    # Make a list with the number of edges for each node
-    # There is probably a better way to do this. I.e., with an adjacency matrix
     n_edges_list = []
     for i in range(board_size**2):
-        # Top left and bottom right corner have 2 neighbors
         if i == 0 or i == board_size**2-1:
             n_edges_list.append(2)
-        # Top right and bottom left corners have 3 neighbors
         elif i == board_size - 1 or i == board_size**2-board_size:
             n_edges_list.append(3)
-        # Top and bottom edges excluding corners has 4 neighbors
         elif i // board_size == 0 or i // board_size == board_size - 1:
             n_edges_list.append(4)
-        # The side nodes excluding corners also has 4 neighbors
         elif i % board_size == 0 or i % board_size == board_size-1:
             n_edges_list.append(4)
-        # The interior nodes has 6 edges
         else:
             n_edges_list.append(6)
 
 
-    # Helper function
     def position_to_edge_id(pos, board_size):
         return pos[0] * board_size + pos[1]
 
@@ -112,7 +100,6 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
         double_hashing=params.double_hashing,
     )
 
-    # Prepare nodes
     for graph_id in range(X.shape[0]):
         graphs_train.set_number_of_graph_nodes(
             graph_id=graph_id,
@@ -120,18 +107,15 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
         )
     graphs_train.prepare_node_configuration()
 
-    # Prepare edges
     for graph_id in range(X.shape[0]):
         for k in range(board_size**2):
             graphs_train.add_graph_node(graph_id, k, n_edges_list[k])
     graphs_train.prepare_edge_configuration()
 
-    # Create the graph
     for graph_id in range(X.shape[0]):
         for k in range(board_size**2):
             sym = X[graph_id][k]
             graphs_train.add_graph_node_property(graph_id, k, sym)
-        # Loop through all edges
         for edge in edges:
             node_id = position_to_edge_id(edge[0], board_size)
             destination_node_id = position_to_edge_id(edge[1], board_size)
@@ -139,11 +123,9 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
             graphs_train.add_graph_node_edge(graph_id, destination_node_id, node_id, edge_type_name=0)
     graphs_train.encode()
 
-    # Test graph
     log.info("Creating test data")
     graphs_test = Graphs(X_test.shape[0], init_with=graphs_train)
 
-    # Prepare nodes
     for graph_id in range(X_test.shape[0]):
         graphs_test.set_number_of_graph_nodes(
             graph_id=graph_id,
@@ -151,18 +133,15 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
         )
     graphs_test.prepare_node_configuration()
 
-    # Prepare edges
     for graph_id in range(X_test.shape[0]):
         for k in range(board_size**2):
             graphs_test.add_graph_node(graph_id, k, n_edges_list[k])
     graphs_test.prepare_edge_configuration()
 
-    # Create the graph
     for graph_id in range(X_test.shape[0]):
         for k in range(board_size**2):
             sym = X_test[graph_id][k]
             graphs_test.add_graph_node_property(graph_id, k, sym)
-             # Add edges
         for edge in edges:
             node_id = position_to_edge_id(edge[0], board_size)
             destination_node_id = position_to_edge_id(edge[1], board_size)
@@ -171,7 +150,6 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
         
     graphs_test.encode()
 
-    # Train the Tsetlin Machine
     tm = MultiClassGraphTsetlinMachine(
         params.number_of_clauses,
         params.t,
@@ -204,14 +182,11 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
         log.info("Clause #%d W:(%d %d) " % (i, weights[0,i], weights[1,i]) + " AND ".join(l))
         log.info(f"Number of literals: {len(l)}")
 
-    # After training is done and we have y_pred:
     training_time = stop_training - start_training
 
-    # Measure memory usage
     process = psutil.Process(os.getpid())
     memory_usage = process.memory_info().rss / (1024 * 1024)  # MB
 
-    # Measure inference time
     start_inference = time()
     y_pred = tm.predict(graphs_test)
     stop_inference = time()
@@ -234,7 +209,7 @@ def train(data, params: Params, board_size: int) -> TrainOutput:
 
     cm = confusion_matrix(y_test, y_pred).tolist()
     weights = tm.get_state()[1].reshape(2, -1)
-    
+
     log.info(f'results: {results}')
     log.info(f'confusion matrix: {cm}')
     return TrainOutput(results=results, confusion_matrix=cm, weights=weights)
